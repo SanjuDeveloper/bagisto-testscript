@@ -23,12 +23,15 @@ import shop.pageobjects.*;
 
 public class baseTest {
 	
+	private String URL = null;
 	public WebDriver driver;
 	
 	public WebDriver initlizeBrowser() throws IOException {
 		Properties prop = new Properties(); 
 		FileInputStream files = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\GlobalData.properties");
-		prop.load(files);			
+		prop.load(files);	
+		URL =prop.getProperty("ShopURL");
+		
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");			
 		if (browserName.equalsIgnoreCase("chrome")) {		
 			WebDriverManager.chromedriver().setup();
@@ -56,9 +59,9 @@ public class baseTest {
 		return ProductListing; 
 								
 	}
-
+	
 	public void goToVelocityShop() {
-		driver.get("http://localhost/bagisto/public/");
+		driver.get(URL);
 		// scrollDown(driver);
 	}
 
