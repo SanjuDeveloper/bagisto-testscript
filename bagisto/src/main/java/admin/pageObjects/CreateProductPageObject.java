@@ -1,7 +1,6 @@
 package admin.pageObjects;
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,6 +40,10 @@ public class CreateProductPageObject extends AbstractComponen {
 	@FindBy(css="button[class='btn btn-lg btn-primary']")
 	WebElement saveProduct;
 	
+	@FindBy(xpath="//p[text()='Product created successfully.']")
+	WebElement successMessage;
+	
+	
 	By addButton = By.linkText("Add Product");
 	By selectType = By.id("type");
 	
@@ -58,6 +61,10 @@ public class CreateProductPageObject extends AbstractComponen {
 		 Family.selectByVisibleText("Default"); // Select Attribute Family
 		 productSKU.sendKeys("mens-tshirt");
 		 saveProduct.click();
+		
+		 if(successMessage.isDisplayed()) {
+			 //Take Screenshot
+		 }
 	}
 
 }
