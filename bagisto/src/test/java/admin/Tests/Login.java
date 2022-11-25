@@ -8,7 +8,7 @@ import admin.pageObjects.LoginPageObject;
 
 public class Login extends BaseTest {
 	
-	@Test
+	@Test(groups={"Login.adminLogin"})
 	public void adminLogin() throws IOException {
 		LoginPageObject LoginPageObject = launcDashboard();
 		LoginPageObject.Login();
