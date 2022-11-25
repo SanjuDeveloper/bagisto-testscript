@@ -7,7 +7,7 @@ import shop.TestComponents.*;
 import shop.pageobjects.ProductListing;
 
 
-public class index extends baseTest {
+public class LandingPage extends baseTest {
 	
 	@Test
 	public void  initail() throws IOException {

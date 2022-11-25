@@ -1,4 +1,4 @@
-package test.bagisto;
+package Abstract;
 
 /**
  * Hello world!
