@@ -1,4 +1,4 @@
-package shop.TestComponents;
+package admin.TestComponents;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,23 +14,21 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import shop.pageobjects.*;
+import admin.pageObjects.*;
 
-public class baseTest {
-	
-	private String SHOP_URL = null;
+public class BaseTest {
+	private String ADMIN_URL = null;
 	public WebDriver driver;
 	
 	public WebDriver initlizeBrowser() throws IOException {
 		Properties prop = new Properties(); 
 		FileInputStream files = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\GlobalData.properties");
 		prop.load(files);	
-		SHOP_URL = prop.getProperty("SHOP_URL");
+		ADMIN_URL =prop.getProperty("ADMIN_URL");
 		
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");			
 		if (browserName.equalsIgnoreCase("chrome")) {		
@@ -51,17 +49,14 @@ public class baseTest {
 		return driver;
 	}
 
-	public ProductListing launcShop() throws IOException{
-
+	public LoginPageObject launcDashboard() throws IOException{
 		driver = initlizeBrowser();
-		goToVelocityShop(); 
-		ProductListing ProductListing = new ProductListing();
-		return ProductListing; 
-								
+		goToAdminPanel(); 
+		return new LoginPageObject(driver);								
 	}
 	
-	public void goToVelocityShop() {
-		driver.get(SHOP_URL);
+	public void goToAdminPanel() {
+		driver.get(ADMIN_URL);
 		// scrollDown(driver);
 	}
 
@@ -87,10 +82,5 @@ public class baseTest {
 		File File = new File(System.getProperty("user.dir") + "//Reports//" + testClassNmae + ".png");
 		FileUtils.copyFile(source, File);
 		return System.getProperty("user.dir") + "//Reports//" + testClassNmae + ".png";
-	}
-
-	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
-
 	}
 }

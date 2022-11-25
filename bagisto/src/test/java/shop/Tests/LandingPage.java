@@ -1,4 +1,4 @@
-package shop.tests;
+package shop.Tests;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
