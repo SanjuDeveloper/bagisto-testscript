@@ -51,13 +51,11 @@ public class baseTest {
 		return driver;
 	}
 
-	public ProductListing launcShop() throws IOException{
+	public HomePage launcShop() throws IOException{
 
 		driver = initlizeBrowser();
 		goToVelocityShop(); 
-		ProductListing ProductListing = new ProductListing();
-		return ProductListing; 
-								
+		 return new HomePage(driver);							
 	}
 	
 	public void goToVelocityShop() {
