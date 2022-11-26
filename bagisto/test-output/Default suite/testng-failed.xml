@@ -3,12 +3,21 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="shop.Tests.AddToCartVerify">
         <methods>
           <include name="closeBrowser"/>
           <include name="initail"/>
         </methods>
       </class> <!-- shop.Tests.AddToCartVerify -->
+=======
+      <class name="admin.Tests.CreateSimpleProduct">
+        <methods>
+          <include name="createProduct"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- admin.Tests.CreateSimpleProduct -->
+>>>>>>> e5331323a701e93755130a6b11a0ca5f4f1b884f
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
