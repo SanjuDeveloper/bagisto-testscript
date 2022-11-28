@@ -43,6 +43,14 @@ public class CreateProductPageObject extends AbstractComponen {
 	@FindBy(xpath="//p[text()='Product created successfully.']")
 	WebElement successMessage;
 	
+	@FindBy(css="input[id='name']")
+	WebElement productName;
+	
+	@FindBy(css="input[id='url_key']")
+	WebElement URL_KEY;
+	
+	@FindBy(css="inpu[id='new']")
+	WebElement NEW;
 	
 	By addButton = By.linkText("Add Product");
 	By selectType = By.id("type");
@@ -60,12 +68,17 @@ public class CreateProductPageObject extends AbstractComponen {
 		 Select Family = new Select(attributeFamily);
 		 Family.selectByVisibleText("Default"); // Select Attribute Family
 		 productSKU.sendKeys("mens-tshirt");
-		 saveProduct.click();
-		
+		 saveProduct.click();		
 		 if(successMessage.isDisplayed()) {
 			 //Take Screenshot
 		 }
 	}
+	
+	public void editProduct() {
+		
+	}
+	
 
 }
+
 
