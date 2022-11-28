@@ -32,9 +32,9 @@ public class AbstractComponen {
 		waite.until(ExpectedConditions.visibilityOf(findBy));
 	}
 	
-	public static void scrollDown(WebDriver driver) {
+	public static void scrollDown(WebDriver driver,int to) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,440)");
+		js.executeScript("window.scrollBy(0,"+to+")");
 	}
 	
 	public static void scrollUp(WebDriver driver) {
