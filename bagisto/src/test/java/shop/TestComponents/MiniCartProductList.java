@@ -31,10 +31,6 @@ public class MiniCartProductList extends AbstractComponen {
 		for (int i = 0; i < countOfMiniCartProduct; i++) {
 			productMiniCart.add(miniCartPoduct.get(i).getText());
 		}
-		System.out.println("List of Mini cart Product");
-		for (String product : productMiniCart) {
-			System.out.println(product);
-		}
 		return productMiniCart;
 	}
 }

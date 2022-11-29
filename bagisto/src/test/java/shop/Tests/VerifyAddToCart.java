@@ -2,6 +2,8 @@ package shop.Tests;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,10 +18,12 @@ public class VerifyAddToCart extends baseTest {
 	public void initail() throws IOException, InterruptedException {
 		launcShop();
 		ProductAddToCart add = new ProductAddToCart(driver);
-		ArrayList<String> cartProduct =add.AddToCart();
+		String[] cartProduct= add.AddToCart();
+		List<String> cartProductList = Arrays.asList(cartProduct);  
 		MiniCartProductList minicart = new MiniCartProductList(driver);
 		ArrayList<String> minicartProduct =minicart.getAddedProduct();
-		boolean boolval = cartProduct.equals(minicartProduct);
+		System.out.println();
+		boolean boolval = cartProductList.equals(minicartProduct);
 		System.out.println(boolval);
 		Assert.assertTrue(boolval);
 	}
