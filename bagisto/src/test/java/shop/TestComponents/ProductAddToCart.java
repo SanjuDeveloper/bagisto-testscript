@@ -21,7 +21,7 @@ public class ProductAddToCart extends AbstractComponen {
 	ArrayList<String> addedToCart = new ArrayList<String>();
 	WebDriver driver;
 
-	String[] productToBeAdded = {  "Shirt" ,"Laptop"};
+	String[] productToBeAdded = { "Mobile", "Shirt" ,"Laptop"};
 
 	public ProductAddToCart(WebDriver driver) {
 		super(driver);

@@ -27,7 +27,6 @@ public class MiniCartProductList extends AbstractComponen {
 
 	public ArrayList<String> getAddedProduct() {
 		int countOfMiniCartProduct = miniCartPoduct.size();
-		System.out.println(countOfMiniCartProduct);
 		for (int i = 0; i < countOfMiniCartProduct; i++) {
 			productMiniCart.add(miniCartPoduct.get(i).getText());
 		}
