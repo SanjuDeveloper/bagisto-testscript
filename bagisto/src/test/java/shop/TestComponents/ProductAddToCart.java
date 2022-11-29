@@ -38,28 +38,16 @@ public class ProductAddToCart extends AbstractComponen {
 
 	@FindBy(id = "mini-cart")
 	WebElement miniCartButton;
-
-	public void AddToCart() throws InterruptedException {
+	public ArrayList<String> AddToCart() throws InterruptedException {
           waitForElementToAppear(productgridpresent);
-		int totalProduct = productgrid.size();
-		System.out.println(totalProduct);
-		for (int i = 0; i <= totalProduct; i++) {
+		for (int i = 0; i <= productgrid.size(); i++) {
 			if (i == 1 || i == 2) {
 				addToCartButton.get(i).click();
 				Thread.sleep(10000);
 				addedToCart.add(productName.get(i).getText());
 			}
 		}
-		System.out.println("List of Added Product in cart");
-		for (String addedProductToCart : addedToCart) {
-
-			System.out.println(addedProductToCart);
-		}
 		miniCartButton.click();
-		//Thread.sleep(10000);
-	}
-
-	public ArrayList<String> listofaddedProduct() {
 		return addedToCart;
 	}
 }

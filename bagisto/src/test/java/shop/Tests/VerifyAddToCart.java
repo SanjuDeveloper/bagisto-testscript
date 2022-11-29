@@ -16,11 +16,9 @@ public class VerifyAddToCart extends baseTest {
 	public void initail() throws IOException, InterruptedException {
 		launcShop();
 		ProductAddToCart add = new ProductAddToCart(driver);
-		add.AddToCart();
+		ArrayList<String> cartProduct =add.AddToCart();
 		MiniCartProductList minicart = new MiniCartProductList(driver);
-		minicart.getAddedProduct();
-		ArrayList<String> cartProduct = add.listofaddedProduct();
-		ArrayList<String> minicartProduct = minicart.minicartproductlist();
+		ArrayList<String> minicartProduct =minicart.getAddedProduct();
 		boolean boolval = cartProduct.equals(minicartProduct);
 		System.out.println(boolval);
 		Assert.assertTrue(boolval);

@@ -25,8 +25,7 @@ public class MiniCartProductList extends AbstractComponen {
 	@FindBy(xpath = "//div[@class='mini-cart-container'] //div[contains(@class,'product-name')]")
 	List<WebElement> miniCartPoduct;
 
-	public void getAddedProduct() {
-
+	public ArrayList<String> getAddedProduct() {
 		int countOfMiniCartProduct = miniCartPoduct.size();
 		System.out.println(countOfMiniCartProduct);
 		for (int i = 0; i < countOfMiniCartProduct; i++) {
@@ -36,10 +35,6 @@ public class MiniCartProductList extends AbstractComponen {
 		for (String product : productMiniCart) {
 			System.out.println(product);
 		}
-	}
-
-	public ArrayList<String> minicartproductlist() {
-		// TODO Auto-generated method stub
 		return productMiniCart;
 	}
 }
