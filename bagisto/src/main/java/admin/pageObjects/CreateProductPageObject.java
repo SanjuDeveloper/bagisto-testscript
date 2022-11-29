@@ -43,10 +43,7 @@ public class CreateProductPageObject extends AbstractComponen {
 	
 	@FindBy(css="input[id='name']")
 	WebElement productName;
-	
-	@FindBy(css="input[id='url_key']")
-	WebElement URL_KEY;
-	
+		
 	@FindBy(css="label[for='new']")
 	WebElement NEW;
 	
@@ -108,14 +105,12 @@ public class CreateProductPageObject extends AbstractComponen {
 		waitForElementToAppear(productNameInputBox); //explicitly wait
 		productName.sendKeys("t-shirt");
 		Thread.sleep(10000);
-		scrollDown(driver,460);
-		//URL_KEY.sendKeys(null);
-		Thread.sleep(2000);
-		Runtime.getRuntime().exec("D:\\bagisto-testscript\\Fileupload.exe");
-		//Runtime.getRuntime().exec("D:\\bagisto-testscript\\Fileupload.exe");
-		/*waitForWebElementToAppear(NEW);
+		scrollDown(driver,460);	
+		System.out.println(NEW.isDisplayed());
+		waitForWebElementToAppear(NEW);
+		System.out.println(NEW.isDisplayed());
 		NEW.click();		
-		featured.click();		
+		/*featured.click();		
 		visibleIndividually.click();		
 		waitForWebElementToAppear(guestCheckout);
 		guestCheckout.click();		
@@ -126,6 +121,9 @@ public class CreateProductPageObject extends AbstractComponen {
 		waitForWebElementToAppear(imageSection);
 		imageSection.click();
 		AddImage.click();*/
+		
+		Thread.sleep(2000);
+		Runtime.getRuntime().exec("D:\\bagisto-testscript\\Fileupload.exe");
 	}
 
 }

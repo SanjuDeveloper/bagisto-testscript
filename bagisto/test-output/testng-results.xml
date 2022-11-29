@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-28T10:53:04 PST" name="Default suite" finished-at="2022-11-28T10:53:53 PST" duration-ms="48750">
+  <suite started-at="2022-11-29T10:21:01 PST" name="Default suite" finished-at="2022-11-29T10:21:49 PST" duration-ms="47469">
     <groups>
     </groups>
-    <test started-at="2022-11-28T10:53:04 PST" name="Default test" finished-at="2022-11-28T10:53:53 PST" duration-ms="48750">
+    <test started-at="2022-11-29T10:21:01 PST" name="Default test" finished-at="2022-11-29T10:21:49 PST" duration-ms="47469">
       <class name="admin.Tests.CreateSimpleProduct">
-        <test-method signature="createProduct()[pri:0, instance:admin.Tests.CreateSimpleProduct@202b0582]" started-at="2022-11-28T10:53:05 PST" name="createProduct" finished-at="2022-11-28T10:53:53 PST" duration-ms="48337" status="PASS">
+        <test-method signature="createProduct()[pri:0, instance:admin.Tests.CreateSimpleProduct@202b0582]" started-at="2022-11-29T10:21:01 PST" name="createProduct" finished-at="2022-11-29T10:21:48 PST" duration-ms="47147" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createProduct -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.CreateSimpleProduct@202b0582]" started-at="2022-11-28T10:53:53 PST" name="closeBrowser" finished-at="2022-11-28T10:53:53 PST" duration-ms="52" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.CreateSimpleProduct@202b0582]" started-at="2022-11-29T10:21:48 PST" name="closeBrowser" finished-at="2022-11-29T10:21:48 PST" duration-ms="56" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
