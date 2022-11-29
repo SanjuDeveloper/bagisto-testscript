@@ -8,12 +8,12 @@ import admin.pageObjects.*;
 
 public class CreateSimpleProduct extends BaseTest {
 	
-	// If we want to run any function first which is another class then we will use grouping concept.
-	//@Test(dependsOnGroups={"Login.adminLogin"})
-	 @Test
+	/*
+	 * If we want to run any function first which is another class then we will use grouping concept.
+	 * driver  should be static in base class
+	 */
+	@Test(dependsOnGroups={"Login.adminLogin"})	
 	public void createProduct() throws InterruptedException, IOException {
-		LoginPageObject LoginPageObject = launcDashboard();
-		LoginPageObject.Login(); // TODO use dependsOn method
 		CreateProductPageObject createProductObject = new CreateProductPageObject(driver);		
 		createProductObject.createSimpleProduct();
 		createProductObject.createdOrEditProduct();

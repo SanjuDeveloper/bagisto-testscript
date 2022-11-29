@@ -47,16 +47,16 @@ public class CreateProductPageObject extends AbstractComponen {
 	@FindBy(css="label[for='new']")
 	WebElement NEW;
 	
-	@FindBy(css="input[id='featured']")
+	@FindBy(xpath="//label[@for='featured']")
 	WebElement featured;
 	
-	@FindBy(css="input[id='visible_individually']")
+	@FindBy(css="label[for='visible_individually']")
 	WebElement visibleIndividually;
 	
-	@FindBy(css="input[id='guest_checkout']")
+	@FindBy(xpath="//label[@for='guest_checkout']")
 	WebElement guestCheckout;
 	
-	@FindBy(css="input[id='status']")
+	@FindBy(xpath="//label[@for='status']")
 	WebElement status;
 	
 	@FindBy(xpath="//div[@class='page-content']/div[2]/div[1]")
@@ -77,12 +77,16 @@ public class CreateProductPageObject extends AbstractComponen {
 	@FindBy(xpath="//*[@id=\"app\"]/div[4]/div/div[2]/div[2]/form/div[2]/div[7]/div[2]/div/div/div/label")
 	WebElement AddImage;
 	
+	@FindBy(css="label[class='image-item']")
+	WebElement selectImage;
+	
 	By addButton = By.linkText("Add Product");
 	By selectType = By.id("type");
 	By productNameInputBox = By.cssSelector("input[id='name']");
 
 	public void createSimpleProduct() throws InterruptedException {
-		 Thread.sleep(5000); // wait for element load
+		// Thread.sleep(5000); // wait for element load
+		 waitForWebElementToAppear(catalogIcon);
 		 catalogIcon.click();
 		 waitForElementToAppear(addButton); //explicitly wait
 		 addProduct.click();
@@ -103,26 +107,45 @@ public class CreateProductPageObject extends AbstractComponen {
 	public void createdOrEditProduct() throws InterruptedException, IOException {
 	
 		waitForElementToAppear(productNameInputBox); //explicitly wait
-		productName.sendKeys("t-shirt");
-		Thread.sleep(10000);
+		productName.sendKeys("t-shirt");		
 		scrollDown(driver,460);	
+		
 		System.out.println(NEW.isDisplayed());
 		waitForWebElementToAppear(NEW);
+		NEW.click();
+		
 		System.out.println(NEW.isDisplayed());
-		NEW.click();		
-		/*featured.click();		
-		visibleIndividually.click();		
+		waitForWebElementToAppear(featured);
+		featured.click();
+		
+		System.out.println(visibleIndividually.isDisplayed());
+		waitForWebElementToAppear(visibleIndividually);
+		visibleIndividually.click();
+		
+		System.out.println(guestCheckout.isDisplayed());
 		waitForWebElementToAppear(guestCheckout);
-		guestCheckout.click();		
+		guestCheckout.click();
+		
 		scrollDown(driver,360);
+		
+		System.out.println(status.isDisplayed());
 		waitForWebElementToAppear(status);
 		status.click();
+		
 		scrollDown(driver,800);
+		
+		System.out.println(imageSection.isDisplayed());
 		waitForWebElementToAppear(imageSection);
 		imageSection.click();
-		AddImage.click();*/
 		
-		Thread.sleep(2000);
+		System.out.println(AddImage.isDisplayed());
+		waitForWebElementToAppear(AddImage);
+		AddImage.click();
+		
+		Thread.sleep(1000);
+		System.out.println(selectImage.isDisplayed());
+		selectImage.click();
+		Thread.sleep(1000);
 		Runtime.getRuntime().exec("D:\\bagisto-testscript\\Fileupload.exe");
 	}
 
