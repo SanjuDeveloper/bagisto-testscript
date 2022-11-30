@@ -26,12 +26,11 @@ public class VerifyAddToCartTest extends baseTest {
 		System.out.println(boolval);
 		Assert.assertTrue(boolval);
 	}
-	// Data Provider for Product to be added to cart, single product add to cart
-		  @DataProvider (name = "ProductToBeAddedToCart") 
-		  public Object[][] productList() {
-			  return new Object[][] 
-				 {
-				      {"Shirt"}
-				 };
-			  }
-}
+
+	/* Data Provider for Product to be added to cart, single product add to cart */
+	 @DataProvider (name = "ProductToBeAddedToCart") 
+	 public Object[][] productList() {
+		 return new Object[][] {{"Shirt"} };
+	 }
+		  
+   }

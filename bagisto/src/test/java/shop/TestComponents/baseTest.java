@@ -51,13 +51,9 @@ public class baseTest {
 		return driver;
 	}
 
-	public ProductListing launcShop() throws IOException{
-
+	public void launcShop() throws IOException{
 		driver = initlizeBrowser();
-		goToVelocityShop(); 
-		ProductListing ProductListing = new ProductListing();
-		return ProductListing; 
-								
+		goToVelocityShop(); 						
 	}
 	
 	public void goToVelocityShop() {
@@ -69,7 +65,6 @@ public class baseTest {
 	public void closeBrowser() {
 		//driver.close();
 	}
-
 	
 	public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
 		
@@ -78,6 +73,7 @@ public class baseTest {
 		ObjectMapper mapper = new ObjectMapper();
 		 List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
 	      });
+		 
 		 return data;			
 	}
 
