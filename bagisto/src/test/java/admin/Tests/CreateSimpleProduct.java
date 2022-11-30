@@ -14,7 +14,8 @@ public class CreateSimpleProduct extends BaseTest {
 	public void createProduct() throws InterruptedException, IOException {
 		LoginPageObject LoginPageObject = launcDashboard();
 		LoginPageObject.Login(); // TODO use dependsOn method
-		CreateProductPageObject createProductObject = new CreateProductPageObject(driver);
+		CreateProductPageObject createProductObject = new CreateProductPageObject(driver);		
 		createProductObject.createSimpleProduct();
+		createProductObject.createdOrEditProduct();
 	}
 }
