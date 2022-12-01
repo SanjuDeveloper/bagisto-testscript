@@ -35,7 +35,7 @@ public class ProductAddToCartPageObject extends AbstractComponen {
 	@FindBy(id = "mini-cart")
 	WebElement miniCartButton;
 
-	public String AddToCart(String productToBeAdded) throws InterruptedException {
+	public String[] AddToCart(String[] productToBeAdded) throws InterruptedException {
 		int j=0;
 		waitForElementToAppear(productgridpresent);
 		for (int i = 0; i <= productgrid.size(); i++) {
