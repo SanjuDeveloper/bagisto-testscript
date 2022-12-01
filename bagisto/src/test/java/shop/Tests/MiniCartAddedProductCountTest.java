@@ -8,7 +8,7 @@ import shop.pageobjects.MiniCartAddedProductCountPageObject;
 import shop.pageobjects.ProductAddToCartPageObject;
 
 public class MiniCartAddedProductCountTest extends baseTest {
-	String[] productToBeAdded = {"Mobile", "Shirt", "Laptop", };
+	String[] productToBeAdded = {"Shirt", "Laptop","Mobile"};
 	@Test
 	public void verifyProductCount() throws InterruptedException, IOException {
 		launcShop();

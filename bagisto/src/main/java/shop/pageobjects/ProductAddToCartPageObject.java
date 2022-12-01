@@ -21,7 +21,7 @@ public class ProductAddToCartPageObject extends AbstractComponen {
 	}
 
 	@FindBy(xpath = "//div[contains(@class,'product-card-new')]")
-	List<WebElement> productgrid;
+	List<WebElement> productcart;
 
 	// By is use for Explicite wait
 	By productgridpresent = By.xpath("//div[contains(@class,'product-card-new')]");
@@ -34,16 +34,20 @@ public class ProductAddToCartPageObject extends AbstractComponen {
 
 	@FindBy(id = "mini-cart")
 	WebElement miniCartButton;
+	
+	@FindBy(xpath = "//a[@class='close']")
+	WebElement flashMessage;
 
 	public String[] AddToCart(String[] productToBeAdded) throws InterruptedException {
 		int j=0;
 		waitForElementToAppear(productgridpresent);
-		for (int i = 0; i <= productgrid.size(); i++) {
+		for (int i = 0; i <= productcart.size(); i++) {
 			String productNameList = productName.get(i).getText().trim();
 			List<String> itemsNeededList = Arrays.asList(productToBeAdded);	
 			if (itemsNeededList.contains(productNameList)) {
 				j++;
 				addToCartButton.get(i).click();
+				//waitForWebElementToDisappear(flashMessage);
 				Thread.sleep(10000);
 				if(j==itemsNeededList.size())
 				{

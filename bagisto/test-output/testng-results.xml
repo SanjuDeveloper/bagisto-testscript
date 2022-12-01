@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-11-30T23:55:29 PST" name="Default suite" finished-at="2022-11-30T23:56:30 PST" duration-ms="60653">
+    <groups>
+    </groups>
+    <test started-at="2022-11-30T23:55:29 PST" name="Default test" finished-at="2022-11-30T23:56:30 PST" duration-ms="60653">
+      <class name="shop.Tests.MiniCartAddedProductCountTest">
+        <test-method signature="verifyProductCount()[pri:0, instance:shop.Tests.MiniCartAddedProductCountTest@4145bad8]" started-at="2022-11-30T23:55:29 PST" name="verifyProductCount" finished-at="2022-11-30T23:56:30 PST" duration-ms="60456" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductCount -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.MiniCartAddedProductCountTest@4145bad8]" started-at="2022-11-30T23:56:30 PST" name="closeBrowser" finished-at="2022-11-30T23:56:30 PST" duration-ms="71" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- shop.Tests.MiniCartAddedProductCountTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -19,6 +19,6 @@ public class MiniCartAddedProductCountPageObject extends AbstractComponen {
 	WebElement minicartcount;
 	
 	public int productCount() {
-		return Integer.parseInt(minicartcount.getText());  
+		return Integer.parseInt(minicartcount.getText()); 
 	}
 }
