@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-30T21:56:37 PST" name="Default suite" finished-at="2022-11-30T21:57:16 PST" duration-ms="39609">
+  <suite started-at="2022-11-30T22:49:22 PST" name="Default suite" finished-at="2022-11-30T22:50:06 PST" duration-ms="44271">
     <groups>
     </groups>
-    <test started-at="2022-11-30T21:56:37 PST" name="Default test" finished-at="2022-11-30T21:57:16 PST" duration-ms="39609">
-      <class name="shop.Tests.VerifyAddToCartTest">
-        <test-method signature="initail()[pri:0, instance:shop.Tests.VerifyAddToCartTest@4145bad8]" started-at="2022-11-30T21:56:37 PST" name="initail" finished-at="2022-11-30T21:57:16 PST" duration-ms="39519" status="PASS">
+    <test started-at="2022-11-30T22:49:22 PST" name="Default test" finished-at="2022-11-30T22:50:06 PST" duration-ms="44271">
+      <class name="shop.Tests.MiniCartAddedProductCountTest">
+        <test-method signature="verifyProductCount()[pri:0, instance:shop.Tests.MiniCartAddedProductCountTest@4145bad8]" started-at="2022-11-30T22:49:22 PST" name="verifyProductCount" finished-at="2022-11-30T22:50:06 PST" duration-ms="44131" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initail -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.VerifyAddToCartTest@4145bad8]" started-at="2022-11-30T21:57:16 PST" name="closeBrowser" finished-at="2022-11-30T21:57:16 PST" duration-ms="9" status="PASS">
+        </test-method> <!-- verifyProductCount -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.MiniCartAddedProductCountTest@4145bad8]" started-at="2022-11-30T22:50:06 PST" name="closeBrowser" finished-at="2022-11-30T22:50:06 PST" duration-ms="50" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- shop.Tests.VerifyAddToCartTest -->
+      </class> <!-- shop.Tests.MiniCartAddedProductCountTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -27,6 +27,6 @@ public class MiniCartProductListPageObject extends AbstractComponen {
 		for (int i = 0; i < miniCartPoduct.size(); i++) {
 			productMiniCart.add(miniCartPoduct.get(i).getText());
 		}
-		return productMiniCart;
+	    return productMiniCart;
 	}
 }
