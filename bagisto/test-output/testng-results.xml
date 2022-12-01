@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-30T22:49:22 PST" name="Default suite" finished-at="2022-11-30T22:50:06 PST" duration-ms="44271">
+  <suite started-at="2022-11-30T23:03:30 PST" name="Default suite" finished-at="2022-11-30T23:04:13 PST" duration-ms="43173">
     <groups>
     </groups>
-    <test started-at="2022-11-30T22:49:22 PST" name="Default test" finished-at="2022-11-30T22:50:06 PST" duration-ms="44271">
+    <test started-at="2022-11-30T23:03:30 PST" name="Default test" finished-at="2022-11-30T23:04:13 PST" duration-ms="43173">
       <class name="shop.Tests.MiniCartAddedProductCountTest">
-        <test-method signature="verifyProductCount()[pri:0, instance:shop.Tests.MiniCartAddedProductCountTest@4145bad8]" started-at="2022-11-30T22:49:22 PST" name="verifyProductCount" finished-at="2022-11-30T22:50:06 PST" duration-ms="44131" status="PASS">
+        <test-method signature="verifyProductCount()[pri:0, instance:shop.Tests.MiniCartAddedProductCountTest@4145bad8]" started-at="2022-11-30T23:03:30 PST" name="verifyProductCount" finished-at="2022-11-30T23:04:13 PST" duration-ms="43005" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyProductCount -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.MiniCartAddedProductCountTest@4145bad8]" started-at="2022-11-30T22:50:06 PST" name="closeBrowser" finished-at="2022-11-30T22:50:06 PST" duration-ms="50" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.MiniCartAddedProductCountTest@4145bad8]" started-at="2022-11-30T23:04:13 PST" name="closeBrowser" finished-at="2022-11-30T23:04:13 PST" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
