@@ -35,8 +35,7 @@ public class ProductAddToCartPageObject extends AbstractComponen {
 	@FindBy(id = "mini-cart")
 	WebElement miniCartButton;
 	
-	@FindBy(xpath = "//a[@class='close']")
-	WebElement flashMessage;
+	By flashMessage = By.xpath("//a[@class='close']");
 
 	public String[] AddToCart(String[] productToBeAdded) throws InterruptedException {
 		int j=0;
@@ -47,10 +46,10 @@ public class ProductAddToCartPageObject extends AbstractComponen {
 			if (itemsNeededList.contains(productNameList)) {
 				j++;
 				addToCartButton.get(i).click();
-				//waitForWebElementToDisappear(flashMessage);
+				//To-Do
+				/* waitForWebElementToDisappear(flashMessage); */
 				Thread.sleep(10000);
-				if(j==itemsNeededList.size())
-				{
+				if(j==itemsNeededList.size()) {
 					break;
 				}
 			}

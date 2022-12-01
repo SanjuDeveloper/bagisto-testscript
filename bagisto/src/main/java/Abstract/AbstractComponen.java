@@ -37,6 +37,11 @@ public class AbstractComponen {
 		waite.until(ExpectedConditions.visibilityOf(findBy));
 	}
 	
+	public  void waitForWebElementToDisappear(By findBy) {
+		WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(5)); 
+		waite.until(ExpectedConditions.visibilityOfElementLocated(findBy));
+	}
+	
 	
 	public static void scrollDown(WebDriver driver,int to) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;

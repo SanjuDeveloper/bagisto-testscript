@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import Abstract.AbstractComponen;
 
-public class MiniCartAddedProductCountPageObject extends AbstractComponen {
+public class CartCountVerifyPageObject extends AbstractComponen {
 	WebDriver driver;
-	public MiniCartAddedProductCountPageObject(WebDriver driver){
+	public CartCountVerifyPageObject(WebDriver driver){
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this.driver);

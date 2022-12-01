@@ -10,7 +10,7 @@ import shop.TestComponents.baseTest;
 import shop.pageobjects.MiniCartProductListPageObject;
 import shop.pageobjects.ProductAddToCartPageObject;
 
-public class VerifyAddToCartTest extends baseTest {
+public class MinicartVerifyTest extends baseTest {
 	String[] productToBeAdded = { "Mobile", "Shirt" ,"Laptop"};
 	@Test
 	public void initail() throws IOException, InterruptedException {
