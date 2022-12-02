@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="shop.Tests.CartCountVerifyTest">
+      <class name="shop.Tests.CompareListTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="verifyProductCount"/>
+          <include name="CompareProductverify"/>
         </methods>
-      </class> <!-- shop.Tests.CartCountVerifyTest -->
+      </class> <!-- shop.Tests.CompareListTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
