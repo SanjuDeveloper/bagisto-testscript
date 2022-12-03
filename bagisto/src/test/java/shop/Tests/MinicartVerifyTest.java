@@ -20,9 +20,7 @@ public class MinicartVerifyTest extends baseTest {
 		List<String> cartProductList = Arrays.asList(cartProduct);  
 		MiniCartProductListPageObject minicart = new MiniCartProductListPageObject(driver);
 		ArrayList<String> minicartProduct =minicart.getAddedProduct();
-		System.out.println();
-		boolean boolval = cartProductList.equals(minicartProduct);
-		System.out.println(boolval);
-		Assert.assertTrue(boolval);
+		boolean cartVerify = cartProductList.equals(minicartProduct);
+		Assert.assertTrue(cartVerify);
 	}		  
   }

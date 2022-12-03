@@ -24,7 +24,7 @@ import shop.pageobjects.*;
 public class baseTest {
 	
 	private String SHOP_URL = null;
-	public WebDriver driver;
+	public static WebDriver driver;
 	
 	public WebDriver initlizeBrowser() throws IOException {
 		Properties prop = new Properties(); 
