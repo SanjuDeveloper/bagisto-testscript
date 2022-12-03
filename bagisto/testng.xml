@@ -6,9 +6,4 @@
 			<class name="admin.Tests.CreateSimpleProduct" />
 	</classes>
   </test> <!-- Test -->
-   <test thread-count="5" name="AddToCart">
-  	<classes>
-			<class name="shop.Tests.AddToCartProductTest" />
-	</classes>
-  </test> <!-- Test -->
 </suite> <!-- Suite -->

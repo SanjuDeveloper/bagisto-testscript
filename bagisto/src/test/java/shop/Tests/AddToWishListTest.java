@@ -7,7 +7,7 @@ import shop.TestComponents.baseTest;
 
 public class AddToWishListTest {
 	@Test(dependsOnGroups = {"LaunchShopTest.openBrowser"})
-	public void VerifyWishlistCount() throws InterruptedException, IOException {
+	public void addToWishlist() throws InterruptedException, IOException {
 		ProductAction aa = new ProductAction(baseTest.driver);
 		aa.addProductTo("Wishlist");
 	}

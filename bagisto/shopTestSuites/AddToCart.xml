@@ -4,7 +4,7 @@
    <test thread-count="5" name="AddToCart">
   	<classes>
 			<class name="shop.Tests.AddToCartTest" />
-			<!--Humne isme launch Shop esliye call kra hai kyoki add to cart launch shop pe depend hai-->
+			<!--Humne isme verifyProductCount esliye call kra hai kyoki AddToCartTest LaunchShopTest pe depend hai-->
 			<class name="shop.Tests.LaunchShopTest" />
 	</classes>
   </test> <!-- Test -->

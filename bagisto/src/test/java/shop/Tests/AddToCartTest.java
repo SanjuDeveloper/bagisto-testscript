@@ -9,7 +9,7 @@ public class AddToCartTest extends baseTest  {
 	
 	/*TestNg wali file mai LaunchShopTest wali class ko define krna rhega tb verifyProductCount() wala function call hoga maven cmd ke through */
 	@Test(dependsOnGroups = {"LaunchShopTest.openBrowser"})
-	public void verifyProductCount() throws InterruptedException, IOException {
+	public void addToCart() throws InterruptedException, IOException {
 		ProductAction aa = new ProductAction(baseTest.driver);
 		aa.addProductTo("Cart");
 	}
