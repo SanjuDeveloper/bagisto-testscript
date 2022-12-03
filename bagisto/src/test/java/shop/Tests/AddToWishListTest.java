@@ -2,13 +2,13 @@ package shop.Tests;
 
 import java.io.IOException;
 import org.testng.annotations.Test;
-import helpers.AddProductToHelper;
+import helpers.ProductAction;
 import shop.TestComponents.baseTest;
 
-public class AddToWishListProductTest {
+public class AddToWishListTest {
 	@Test(dependsOnGroups = {"LaunchShopTest.openBrowser"})
 	public void VerifyWishlistCount() throws InterruptedException, IOException {
-		AddProductToHelper aa = new AddProductToHelper(baseTest.driver);
+		ProductAction aa = new ProductAction(baseTest.driver);
 		aa.addProductTo("Wishlist");
 	}
 }

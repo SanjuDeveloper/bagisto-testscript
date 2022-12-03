@@ -7,9 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import Abstract.AbstractComponen;
-public class AddProductToHelper extends AbstractComponen {
+
+public class ProductAction extends AbstractComponen {
 WebDriver driver;
-	public AddProductToHelper(WebDriver driver) {
+	public ProductAction(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -39,7 +40,6 @@ WebDriver driver;
 			switch(actiontoPerform) {
 			case "Cart":
 				waitForElementToAppear(productgridpresent);
-				System.out.println(actiontoPerform);
 				addToCartButton.get(i).click();
 				Thread.sleep(5000);
 				break;
@@ -52,7 +52,10 @@ WebDriver driver;
 				 compareArrow.get(i).click();
 				break;
 			default:
-				System.out.println("Select Correct Operation to perfrom");
+				// To-DO Need to update in future
+				waitForElementToAppear(productgridpresent);
+				addToCartButton.get(i).click();
+				Thread.sleep(5000);
 			}
 		}
 	}
