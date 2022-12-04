@@ -43,6 +43,16 @@ public class AbstractComponen {
 		waite.until(ExpectedConditions.visibilityOfElementLocated(findBy));
 	}
 	
+	public  void waitForWebElementToClickable(WebElement findBy) {
+		WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(5)); 
+		waite.until(ExpectedConditions.elementToBeClickable(findBy));
+	}
+	
+	public  void waitForWebElementToClickable(By findBy) {
+		WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(5)); 
+		waite.until(ExpectedConditions.elementToBeClickable(findBy));
+	}
+	
 	
 	public static void scrollDown(WebDriver driver,int to) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
