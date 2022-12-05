@@ -19,12 +19,11 @@ import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import shop.pageobjects.*;
 
 public class baseTest {
 	
 	private String SHOP_URL = null;
-	public WebDriver driver;
+	public static WebDriver driver;
 	
 	public WebDriver initlizeBrowser() throws IOException {
 		Properties prop = new Properties(); 

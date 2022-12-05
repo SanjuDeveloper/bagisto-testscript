@@ -7,7 +7,6 @@ public class DateHelper {
 
 	public static void main(String[] args) {
 		System.out.println(getDate("TODAY"));
-
 	}
 	
 	public static  String getDate(String rquestType) {		
