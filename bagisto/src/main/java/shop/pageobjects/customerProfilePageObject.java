@@ -1,7 +1,6 @@
 package shop.pageobjects;
 
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +10,8 @@ WebDriver driver;
 	public customerProfilePageObject() {
 		this.driver = driver;
 	}
+	
+	/* To-Do Need to add Test case for Customer Profile .*/
 	@FindBy(xpath ="//tbody//tr")
 	List<WebElement> totalRow;
 	
@@ -26,5 +27,3 @@ WebDriver driver;
 	    }
 	}
 }
-
-// To--Do Need to add Test case for Customer Profile .
