@@ -32,16 +32,19 @@ public class CustomerLoginPageObject extends AbstractComponen {
 	@FindBy (xpath= "//input[@type=\"submit\"]")
 	WebElement loginButton;
 	
-	@FindBy(xpath="//a[@aria-label=\"Logo\"]")
-	WebElement homeLogo;
-	
-	public void customerLogin() throws InterruptedException {
+	@FindBy(xpath="//div[@id='account']//span[1]")
+	WebElement accountName;
+	/*This function is used to Logged In User with Email and Password*/
+	public void customerLogin(String username, String password) throws InterruptedException {
+		System.out.println("Before Login Username : "+accountName.getText());
 		accountlogin.click();
 		signupButton.click();
-	    loginEmail.sendKeys("admin@example.com", Keys.TAB);
-	    loginPass.sendKeys("Admin123");
+	    loginEmail.sendKeys(username, Keys.TAB);
+	    loginPass.sendKeys(password);
+	    //To-Do Need to implement with explicite wait
 	    //waitForWebElementToClickable(loginButton);
 	    Thread.sleep(2000);
-	    loginButton.click();
+	    loginButton.click();  
+	    System.out.println("After Login Username : "+accountName.getText());
 	}
 }
