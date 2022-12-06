@@ -2,29 +2,29 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-06T22:54:09 IST" name="Default suite" finished-at="2022-12-06T22:54:21 IST" duration-ms="12111">
+  <suite started-at="2022-12-06T23:28:51 IST" name="Default suite" finished-at="2022-12-06T23:29:24 IST" duration-ms="33002">
     <groups>
       <group name="LaunchShopTest.openBrowser">
         <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@19e4653c]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
       </group> <!-- LaunchShopTest.openBrowser -->
     </groups>
-    <test started-at="2022-12-06T22:54:09 IST" name="Default test" finished-at="2022-12-06T22:54:21 IST" duration-ms="12111">
+    <test started-at="2022-12-06T23:28:51 IST" name="Default test" finished-at="2022-12-06T23:29:24 IST" duration-ms="33002">
       <class name="shop.Tests.verifyProductCountOf">
-        <test-method signature="countVerify()[pri:0, instance:shop.Tests.verifyProductCountOf@2892d68]" started-at="2022-12-06T22:54:19 IST" name="countVerify" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-06T22:54:21 IST" duration-ms="1870" status="PASS">
+        <test-method signature="countVerify()[pri:0, instance:shop.Tests.verifyProductCountOf@2892d68]" started-at="2022-12-06T23:29:05 IST" name="countVerify" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-06T23:29:23 IST" duration-ms="18188" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- countVerify -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.verifyProductCountOf@2892d68]" started-at="2022-12-06T22:54:21 IST" name="closeBrowser" finished-at="2022-12-06T22:54:21 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.verifyProductCountOf@2892d68]" started-at="2022-12-06T23:29:24 IST" name="closeBrowser" finished-at="2022-12-06T23:29:24 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- shop.Tests.verifyProductCountOf -->
       <class name="shop.Tests.LaunchShopTest">
-        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@19e4653c]" started-at="2022-12-06T22:54:09 IST" name="openBrowser" finished-at="2022-12-06T22:54:19 IST" duration-ms="10049" status="PASS">
+        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@19e4653c]" started-at="2022-12-06T23:28:51 IST" name="openBrowser" finished-at="2022-12-06T23:29:05 IST" duration-ms="14465" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@19e4653c]" started-at="2022-12-06T22:54:19 IST" name="closeBrowser" finished-at="2022-12-06T22:54:19 IST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@19e4653c]" started-at="2022-12-06T23:29:05 IST" name="closeBrowser" finished-at="2022-12-06T23:29:05 IST" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

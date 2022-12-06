@@ -10,7 +10,7 @@ public class verifyProductCountOf extends baseTest {
 	/*Function to verify count of actionOn = "Compare" we can change action according to need*/
 	public void countVerify() throws InterruptedException {
 		/*change actionOn value to "Cart" , "Comapre" , "Wishlist" to perform action on particular*/
-		String actionOn = "Compare";
+		String actionOn = "Cart";
 		ProductAction action = new ProductAction(baseTest.driver);
 		String[] addedProductCount = action.addProductTo(actionOn);
 		/*Get cart, compare, wishlist added Product count at the time of add*/

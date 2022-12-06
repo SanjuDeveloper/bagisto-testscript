@@ -76,17 +76,21 @@ WebDriver driver;
 			return countandAction;
 	}
 	
-	public int productCountOf(String actionPerform) {
+	public int productCountOf(String type) {
 		String productCountOf = null;
-		switch (actionPerform) {
-		case "Minicart":
+		switch (type) {
+		case "Cart":
 			productCountOf = minicartcount.getText();
+			break;
 		case "Wishlist":
 			productCountOf = wishlistCount.getText();
+			break;
 		case "Compare":
 			productCountOf = compareCount.getText();
+			break;
+		default:
+			System.out.println("Action on "+type+" not found");
 		}
 		   return Integer.parseInt(productCountOf);
-		
 	}
 }
