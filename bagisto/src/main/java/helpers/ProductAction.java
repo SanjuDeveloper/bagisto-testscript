@@ -44,36 +44,28 @@ WebDriver driver;
 	@FindBy(xpath="//a[contains(@class,'wishlist-btn')]/div/span")
 	WebElement wishlistCount;
 	
-	public String[] addProductTo(String actiontoPerform) throws InterruptedException {
-		int addProduct = 0;
-		for (int i=0; i<3; i++) {
+	public void addProductTo(String actiontoPerform,int count) throws InterruptedException {
+		for (int i=0; i<count; i++) {
 			switch(actiontoPerform) {
 			case "Cart":
 				waitForElementToAppear(productgridpresent);
 				addToCartButton.get(i).click();
-				Thread.sleep(5000);
-				addProduct++;
 				break;
 			case "Wishlist":
 				mouseHover(productName.get(i)); 
 				wishListButton.get(i).click();
-				addProduct++;
 				break;
 			case "Compare":
 				mouseHover(productName.get(i)); 
 				 compareArrow.get(i).click();
-				 addProduct++;
 				break;
 			default:
 				// To-DO Need to update in future
 				waitForElementToAppear(productgridpresent);
 				addToCartButton.get(i).click();
-				Thread.sleep(5000);
 			}
+			Thread.sleep(5000);
 		}
-			String addProductCount=String.valueOf(addProduct);
-			String[] countandAction= {addProductCount,actiontoPerform};
-			return countandAction;
 	}
 	
 	public int productCountOf(String type) {
