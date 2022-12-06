@@ -2,41 +2,29 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-05T23:57:21 IST" name="Default suite" finished-at="2022-12-05T23:57:49 IST" duration-ms="28179">
+  <suite started-at="2022-12-06T22:54:09 IST" name="Default suite" finished-at="2022-12-06T22:54:21 IST" duration-ms="12111">
     <groups>
       <group name="LaunchShopTest.openBrowser">
-        <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@1349883]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
+        <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@19e4653c]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
       </group> <!-- LaunchShopTest.openBrowser -->
     </groups>
-    <test started-at="2022-12-05T23:57:21 IST" name="Default test" finished-at="2022-12-05T23:57:49 IST" duration-ms="28179">
-      <class name="shop.Tests.CustomerLoginTest">
-        <test-method signature="customerLogin(java.lang.String,java.lang.String)[pri:0, instance:shop.Tests.CustomerLoginTest@2e8c1c9b]" started-at="2022-12-05T23:57:33 IST" name="customerLogin" data-provider="usernameAndPass" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-05T23:57:49 IST" duration-ms="15397" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin@example.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Admin123]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2022-12-06T22:54:09 IST" name="Default test" finished-at="2022-12-06T22:54:21 IST" duration-ms="12111">
+      <class name="shop.Tests.verifyProductCountOf">
+        <test-method signature="countVerify()[pri:0, instance:shop.Tests.verifyProductCountOf@2892d68]" started-at="2022-12-06T22:54:19 IST" name="countVerify" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-06T22:54:21 IST" duration-ms="1870" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- customerLogin -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.CustomerLoginTest@2e8c1c9b]" started-at="2022-12-05T23:57:49 IST" name="closeBrowser" finished-at="2022-12-05T23:57:49 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- countVerify -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.verifyProductCountOf@2892d68]" started-at="2022-12-06T22:54:21 IST" name="closeBrowser" finished-at="2022-12-06T22:54:21 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- shop.Tests.CustomerLoginTest -->
+      </class> <!-- shop.Tests.verifyProductCountOf -->
       <class name="shop.Tests.LaunchShopTest">
-        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@1349883]" started-at="2022-12-05T23:57:21 IST" name="openBrowser" finished-at="2022-12-05T23:57:33 IST" duration-ms="12560" status="PASS">
+        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@19e4653c]" started-at="2022-12-06T22:54:09 IST" name="openBrowser" finished-at="2022-12-06T22:54:19 IST" duration-ms="10049" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@1349883]" started-at="2022-12-05T23:57:33 IST" name="closeBrowser" finished-at="2022-12-05T23:57:33 IST" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@19e4653c]" started-at="2022-12-06T22:54:19 IST" name="closeBrowser" finished-at="2022-12-06T22:54:19 IST" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

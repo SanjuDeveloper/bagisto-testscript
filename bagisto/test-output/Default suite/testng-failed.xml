@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="shop.Tests.CustomerLoginTest">
+      <class name="shop.Tests.verifyProductCountOf">
         <methods>
+          <include name="countVerify"/>
           <include name="closeBrowser"/>
-          <include name="customerLogin" invocation-numbers="0"/>
         </methods>
-      </class> <!-- shop.Tests.CustomerLoginTest -->
+      </class> <!-- shop.Tests.verifyProductCountOf -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
