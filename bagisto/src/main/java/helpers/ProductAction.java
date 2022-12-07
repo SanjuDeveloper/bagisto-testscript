@@ -1,7 +1,6 @@
 package helpers;
 
 import java.util.List;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,19 +16,22 @@ WebDriver driver;
 	}
 	@FindBy(xpath = "//div[contains(@class,'product-card-new')]")
 	List<WebElement> productcart;
+	
+	@FindBy(xpath = "(//div[contains(@class,'product-card-new')])[1]")
+	public WebElement product;
 
-	By productgridpresent = By.xpath("//div[contains(@class,'product-card-new')]");
-
-	@FindBy(xpath = "(//button[contains(@class,'btn-add-to-cart')])")
+	@FindBy(xpath = "(//div[contains(@class,'add-to-cart-btn')])")
 	List<WebElement> addToCartButton;
 
 	@FindBy(xpath = "(//div[@class=\"card-body\"]//div[contains(@class,'product-name')])")
 	List<WebElement> productName;
 	
-	@FindBy (xpath = "//a[contains(@class,'compare-icon')]")
+	@FindBy(xpath="(//div[@class=\"product-price\"])")
+    List<WebElement> productPrice;	
+	@FindBy (xpath = "//a[contains(@title,\"Add product to compare list\")]")
 	List<WebElement> compareArrow;
 	
-	@FindBy (xpath = "//a[@title=\"Add product to wishlist\"]//i")
+	@FindBy (xpath = "//a[contains(@title,\"Add product to wishlist\")]")
 	List<WebElement> wishListButton;
 
 	@FindBy(id = "mini-cart")
@@ -48,26 +50,24 @@ WebDriver driver;
 		for (int i=0; i<count; i++) {
 			switch(actiontoPerform) {
 			case "Cart":
-				waitForElementToAppear(productgridpresent);
 				addToCartButton.get(i).click();
 				break;
 			case "Wishlist":
-				mouseHover(productName.get(i)); 
+				mouseHover(productPrice.get(i)); 
 				wishListButton.get(i).click();
 				break;
 			case "Compare":
-				mouseHover(productName.get(i)); 
+				mouseHover(productPrice.get(i)); 
 				 compareArrow.get(i).click();
 				break;
 			default:
 				// To-DO Need to update in future
-				waitForElementToAppear(productgridpresent);
 				addToCartButton.get(i).click();
 			}
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 		}
 	}
-	
+	/*This function return count of cart, compare and wishlist*/
 	public int productCountOf(String type) {
 		String productCountOf = null;
 		switch (type) {
