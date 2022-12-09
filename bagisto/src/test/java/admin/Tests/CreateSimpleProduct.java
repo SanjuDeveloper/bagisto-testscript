@@ -1,7 +1,6 @@
 package admin.Tests;
 
 import java.io.IOException;
-
 import org.testng.annotations.Test;
 import BaseTest.BaseTest;
 import admin.pageObjects.*;
