@@ -14,6 +14,10 @@ WebDriver driver;
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	
+	@FindBy(xpath="(//a[@aria-label=\"Logo\"])[1]")
+	public  WebElement homeLogo;
+	
 	@FindBy(xpath = "//div[contains(@class,'product-card-new')]")
 	List<WebElement> productcart;
 	
@@ -33,6 +37,9 @@ WebDriver driver;
 	
 	@FindBy (xpath = "//a[contains(@title,\"Add product to wishlist\")]")
 	List<WebElement> wishListButton;
+	
+	@FindBy(css=".wishlist-icon")
+	List<WebElement> wishlistIcon;
 
 	@FindBy(id = "mini-cart")
 	WebElement miniCartButton;
@@ -54,7 +61,7 @@ WebDriver driver;
 				break;
 			case "Wishlist":
 				mouseHover(productPrice.get(i)); 
-				wishListButton.get(i).click();
+				wishlistIcon.get(i).click();
 				break;
 			case "Compare":
 				mouseHover(productPrice.get(i)); 
@@ -64,7 +71,7 @@ WebDriver driver;
 				// To-DO Need to update in future
 				addToCartButton.get(i).click();
 			}
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		}
 	}
 	/*This function return count of cart, compare and wishlist*/

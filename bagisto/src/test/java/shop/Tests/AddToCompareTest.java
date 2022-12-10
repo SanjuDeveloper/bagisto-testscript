@@ -2,13 +2,13 @@ package shop.Tests;
 
 import java.io.IOException;
 import org.testng.annotations.Test;
+import BaseTest.BaseTest;
 import helpers.ProductActionHelper;
-import shop.TestComponents.baseTest;
 
-public class AddToCompareTest extends baseTest {
+public class AddToCompareTest extends BaseTest {
 	@Test(dependsOnGroups = {"LaunchShopTest.openBrowser"})
 	public void addToCompare() throws InterruptedException, IOException {
-		ProductActionHelper aa = new ProductActionHelper(baseTest.driver);
+		ProductActionHelper aa = new ProductActionHelper(BaseTest.driver);
 		aa.addProductTo("Compare",3);
 	}
 }

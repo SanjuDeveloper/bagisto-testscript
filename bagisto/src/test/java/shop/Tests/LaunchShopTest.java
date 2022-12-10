@@ -1,12 +1,10 @@
 package shop.Tests;
 
 import java.io.IOException;
-
+import BaseTest.BaseTest;
 import org.testng.annotations.Test;
 
-import shop.TestComponents.baseTest;
-
-public class LaunchShopTest extends baseTest {
+public class LaunchShopTest extends BaseTest {
 
 	@Test(groups= {"LaunchShopTest.openBrowser"})
 	public void openBrowser() throws IOException, InterruptedException {

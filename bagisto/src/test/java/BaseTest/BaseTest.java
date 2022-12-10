@@ -1,4 +1,4 @@
-package shop.TestComponents;
+package BaseTest;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,19 +18,22 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import admin.pageObjects.LoginPageObject;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class baseTest {
+public class BaseTest {
 	
+	private String ADMIN_URL = null;
 	private String SHOP_URL = null;
 	public static WebDriver driver;
+	public Properties prop;
+	public FileInputStream files;
 	
 	public WebDriver initlizeBrowser() throws IOException {
-		Properties prop = new Properties(); 
-		FileInputStream files = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\GlobalData.properties");
+		getGlobalProperty();
 		prop.load(files);	
 		SHOP_URL = prop.getProperty("SHOP_URL");
-		
+		ADMIN_URL =prop.getProperty("ADMIN_URL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");			
 		if (browserName.equalsIgnoreCase("chrome")) {		
 			WebDriverManager.chromedriver().setup();
@@ -57,6 +60,17 @@ public class baseTest {
 	
 	public void goToVelocityShop() {
 		driver.get(SHOP_URL);
+		// scrollDown(driver);
+	}
+	
+	public LoginPageObject launcDashboard() throws IOException{
+		driver = initlizeBrowser();
+		goToAdminPanel(); 
+		return new LoginPageObject(driver);								
+	}
+	
+	public void goToAdminPanel() {
+		driver.get(ADMIN_URL);
 		// scrollDown(driver);
 	}
 
@@ -87,5 +101,9 @@ public class baseTest {
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 
+	}
+	public void getGlobalProperty() throws IOException {
+	 prop = new Properties(); 
+	 files = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\GlobalData.properties");
 	}
 }

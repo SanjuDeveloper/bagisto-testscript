@@ -1,34 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-09T01:05:13 IST" name="Default suite" finished-at="2022-12-09T01:05:38 IST" duration-ms="24250">
+  <suite started-at="2022-12-10T00:18:48 IST" name="Default suite" finished-at="2022-12-10T00:20:30 IST" duration-ms="101738">
     <groups>
       <group name="LaunchShopTest.openBrowser">
-        <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@f0c8a99]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
+        <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
       </group> <!-- LaunchShopTest.openBrowser -->
+      <group name="CustomerLoginTest.customerLogin">
+        <method signature="CustomerLoginTest.customerLogin(java.lang.String,java.lang.String)[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" name="customerLogin" class="shop.Tests.CustomerLoginTest"/>
+      </group> <!-- CustomerLoginTest.customerLogin -->
     </groups>
-    <test started-at="2022-12-09T01:05:13 IST" name="Default test" finished-at="2022-12-09T01:05:38 IST" duration-ms="24250">
+    <test started-at="2022-12-10T00:18:48 IST" name="Default test" finished-at="2022-12-10T00:20:30 IST" duration-ms="101738">
+      <class name="shop.Tests.CustomerLoginTest">
+        <test-method signature="customerLogin(java.lang.String,java.lang.String)[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" started-at="2022-12-10T00:19:00 IST" name="customerLogin" data-provider="usernameAndPass" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-10T00:19:11 IST" duration-ms="11282" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin@example.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerLogin -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" started-at="2022-12-10T00:19:11 IST" name="closeBrowser" finished-at="2022-12-10T00:19:11 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- shop.Tests.CustomerLoginTest -->
+      <class name="shop.Tests.AddToWishListTest">
+        <test-method signature="addToWishlist()[pri:0, instance:shop.Tests.AddToWishListTest@72cc7e6f]" started-at="2022-12-10T00:19:11 IST" name="addToWishlist" depends-on-groups="LaunchShopTest.openBrowser, CustomerLoginTest.customerLogin" finished-at="2022-12-10T00:20:30 IST" duration-ms="78670" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToWishlist -->
+      </class> <!-- shop.Tests.AddToWishListTest -->
       <class name="shop.Tests.LaunchShopTest">
-        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@f0c8a99]" started-at="2022-12-09T01:05:14 IST" name="openBrowser" finished-at="2022-12-09T01:05:32 IST" duration-ms="18224" status="PASS">
+        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" started-at="2022-12-10T00:18:48 IST" name="openBrowser" finished-at="2022-12-10T00:19:00 IST" duration-ms="11610" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@f0c8a99]" started-at="2022-12-09T01:05:32 IST" name="closeBrowser" finished-at="2022-12-09T01:05:32 IST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" started-at="2022-12-10T00:19:00 IST" name="closeBrowser" finished-at="2022-12-10T00:19:00 IST" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- shop.Tests.LaunchShopTest -->
-      <class name="shop.Tests.searchProductTest">
-        <test-method signature="searchItem()[pri:0, instance:shop.Tests.searchProductTest@cb0755b]" started-at="2022-12-09T01:05:32 IST" name="searchItem" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-09T01:05:38 IST" duration-ms="5785" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchItem -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.searchProductTest@cb0755b]" started-at="2022-12-09T01:05:38 IST" name="closeBrowser" finished-at="2022-12-09T01:05:38 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- shop.Tests.searchProductTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
