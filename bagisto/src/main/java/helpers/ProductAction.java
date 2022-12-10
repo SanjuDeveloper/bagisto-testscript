@@ -35,6 +35,8 @@ WebDriver driver;
 	@FindBy(id = "mini-cart")
 	WebElement miniCartButton;
 	
+	
+	
 	public void addProductTo(String actiontoPerform) throws InterruptedException {
 		for (int i=0; i<3; i++) {
 			switch(actiontoPerform) {
@@ -58,5 +60,11 @@ WebDriver driver;
 				Thread.sleep(5000);
 			}
 		}
+	}
+	
+	public void productCountOf(String actionPerform) {
+		
+		
+		
 	}
 }
