@@ -11,6 +11,6 @@ public class AddToCartTest extends baseTest  {
 	@Test(dependsOnGroups = {"LaunchShopTest.openBrowser"})
 	public void addToCart() throws InterruptedException, IOException {
 		ProductAction aa = new ProductAction(baseTest.driver);
-		aa.addProductTo("Cart");
+		aa.addProductTo("Cart",3);
 	}
 }

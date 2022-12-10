@@ -35,15 +35,21 @@ WebDriver driver;
 	@FindBy(id = "mini-cart")
 	WebElement miniCartButton;
 	
+	@FindBy(xpath="//div[@class=\"mini-cart-content\"]/div/span")
+	WebElement minicartcount;
 	
+	@FindBy(xpath="//a[contains(@class,'compare-btn')]/div/span")
+	WebElement compareCount;
 	
-	public void addProductTo(String actiontoPerform) throws InterruptedException {
-		for (int i=0; i<3; i++) {
+	@FindBy(xpath="//a[contains(@class,'wishlist-btn')]/div/span")
+	WebElement wishlistCount;
+	
+	public void addProductTo(String actiontoPerform,int count) throws InterruptedException {
+		for (int i=0; i<count; i++) {
 			switch(actiontoPerform) {
 			case "Cart":
 				waitForElementToAppear(productgridpresent);
 				addToCartButton.get(i).click();
-				Thread.sleep(5000);
 				break;
 			case "Wishlist":
 				mouseHover(productName.get(i)); 
@@ -57,14 +63,26 @@ WebDriver driver;
 				// To-DO Need to update in future
 				waitForElementToAppear(productgridpresent);
 				addToCartButton.get(i).click();
-				Thread.sleep(5000);
 			}
+			Thread.sleep(5000);
 		}
 	}
 	
-	public void productCountOf(String actionPerform) {
-		
-		
-		
+	public int productCountOf(String type) {
+		String productCountOf = null;
+		switch (type) {
+		case "Cart":
+			productCountOf = minicartcount.getText();
+			break;
+		case "Wishlist":
+			productCountOf = wishlistCount.getText();
+			break;
+		case "Compare":
+			productCountOf = compareCount.getText();
+			break;
+		default:
+			System.out.println("Action on "+type+" not found");
+		}
+		   return Integer.parseInt(productCountOf);
 	}
 }
