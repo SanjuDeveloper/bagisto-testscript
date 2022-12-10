@@ -7,9 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import Abstract.AbstractComponen;
 
-public class ProductAction extends AbstractComponen {
+public class ProductActionHelper extends AbstractComponen {
 WebDriver driver;
-	public ProductAction(WebDriver driver) {
+	public ProductActionHelper(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

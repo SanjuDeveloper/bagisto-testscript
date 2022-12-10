@@ -2,7 +2,7 @@ package shop.Tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import helpers.ProductAction;
+import helpers.ProductActionHelper;
 import shop.TestComponents.baseTest;
 
 public class verifyProductCountOfTest extends baseTest {
@@ -12,7 +12,7 @@ public class verifyProductCountOfTest extends baseTest {
 		/*change actionOn value to "Cart" , "Comapre" , "Wishlist" to perform action on particular*/
 		String actionOn = "Cart";
 		int productNeedToAdd = 3;
-		ProductAction action = new ProductAction(baseTest.driver);
+		ProductActionHelper action = new ProductActionHelper(baseTest.driver);
 		action.addProductTo(actionOn,productNeedToAdd);
 		/*Get Count of comapre, cart, wishlist which showing on comapre, wishlist, cart icon */
 		int getcount = action.productCountOf(actionOn);
