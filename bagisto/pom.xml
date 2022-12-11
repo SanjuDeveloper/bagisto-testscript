@@ -67,7 +67,7 @@
 							<version>3.0.0-M7</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>shopTestSuites/testng.xml</suiteXmlFile>
+									<suiteXmlFile>shopTestSuites/AddToWishList.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
@@ -122,7 +122,6 @@
 		    <artifactId>cucumber-testng</artifactId>
 		    <version>7.5.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
@@ -145,5 +144,12 @@
           <artifactId>json-simple</artifactId>
           <version>1.1.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+    	<groupId>com.fasterxml.jackson.core</groupId>
+    	<artifactId>jackson-databind</artifactId>
+   		<version>2.14.1</version>
+		</dependency>
+
 	</dependencies>
 </project>

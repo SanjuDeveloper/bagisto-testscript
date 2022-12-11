@@ -78,9 +78,10 @@ public class BaseTest {
 	
 	public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
 		String jsonContent = 	FileUtils.readFileToString(new File(filePath),StandardCharsets.UTF_8);	
+		//String To HashMap Jackson DataBind Dependency
 		ObjectMapper mapper = new ObjectMapper();
-		 List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {}); 
-		 return data;			
+		List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {}); 
+		return data;			
 	}
 
 	public String getScreenshot(String testClassNmae, WebDriver driver) throws IOException {

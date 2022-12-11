@@ -3,7 +3,7 @@
 <suite name="Suite">
    <test thread-count="5" name="AddToCompare">
   	<classes>
-			<class name="shop.Tests.AddToCompareTest" />
+			<class name="shop.Tests.AddToWishListTest" />
 				<!--Humne isme LaunchShopTest esliye call kra hai kyoki AddToCartTest LaunchShopTest pe depend hai-->
 			<class name="shop.Tests.LaunchShopTest" />
 	</classes>

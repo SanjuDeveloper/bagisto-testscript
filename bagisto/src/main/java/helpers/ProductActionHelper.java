@@ -57,6 +57,7 @@ WebDriver driver;
 				break;
 			case "Wishlist":
 				mouseHover(productPrice.get(i)); 
+				Thread.sleep(2000);
 				wishListButton.get(i).click();	
 				break;
 			case "Compare":
