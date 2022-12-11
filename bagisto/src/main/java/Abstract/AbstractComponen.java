@@ -11,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
@@ -52,7 +51,6 @@ public class AbstractComponen {
 		WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(5)); 
 		waite.until(ExpectedConditions.elementToBeClickable(findBy));
 	}
-	
 	
 	public static void scrollDown(WebDriver driver,int to) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;

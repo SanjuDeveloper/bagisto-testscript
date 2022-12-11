@@ -18,28 +18,20 @@ WebDriver driver;
 	@FindBy(xpath="(//a[@aria-label=\"Logo\"])[1]")
 	public  WebElement homeLogo;
 	
-	@FindBy(xpath = "//div[contains(@class,'product-card-new')]")
-	List<WebElement> productcart;
-	
 	@FindBy(xpath = "(//div[contains(@class,'product-card-new')])[1]")
 	public WebElement product;
 
-	@FindBy(xpath = "(//div[contains(@class,'add-to-cart-btn')])")
-	List<WebElement> addToCartButton;
-
-	@FindBy(xpath = "(//div[@class=\"card-body\"]//div[contains(@class,'product-name')])")
-	List<WebElement> productName;
-	
 	@FindBy(xpath="(//div[@class=\"product-price\"])")
     List<WebElement> productPrice;	
-	@FindBy (xpath = "//a[contains(@title,\"Add product to compare list\")]")
-	List<WebElement> compareArrow;
 	
-	@FindBy (xpath = "//a[contains(@title,\"Add product to wishlist\")]")
+	@FindBy(xpath = "(//div[contains(@class,'add-to-cart-btn')])")
+	List<WebElement> addToCartButton;
+	
+	@FindBy(css="a[title='Add product to compare list']")
+	List<WebElement> compareIcon;
+	
+	@FindBy (xpath = "//a[@title=\"Add product to wishlist\"]")
 	List<WebElement> wishListButton;
-	
-	@FindBy(css=".wishlist-icon")
-	List<WebElement> wishlistIcon;
 
 	@FindBy(id = "mini-cart")
 	WebElement miniCartButton;
@@ -53,7 +45,11 @@ WebDriver driver;
 	@FindBy(xpath="//a[contains(@class,'wishlist-btn')]/div/span")
 	WebElement wishlistCount;
 	
-	public void addProductTo(String actiontoPerform,int count) throws InterruptedException {
+	@FindBy(xpath="//div[contains(@class,\"alert-dismissible\")]")
+	WebElement alertOfSuccess;
+	
+	public String addProductTo(String actiontoPerform,int count) throws InterruptedException {
+		String alertSuccess = null;
 		for (int i=0; i<count; i++) {
 			switch(actiontoPerform) {
 			case "Cart":
@@ -61,19 +57,22 @@ WebDriver driver;
 				break;
 			case "Wishlist":
 				mouseHover(productPrice.get(i)); 
-				wishlistIcon.get(i).click();
+				wishListButton.get(i).click();	
 				break;
 			case "Compare":
 				mouseHover(productPrice.get(i)); 
-				 compareArrow.get(i).click();
+				compareIcon.get(i).click();
 				break;
 			default:
 				// To-DO Need to update in future
-				addToCartButton.get(i).click();
+			 addToCartButton.get(i).click();
 			}
-			Thread.sleep(5000);
+			waitForWebElementToAppear(alertOfSuccess);
+			alertSuccess = alertOfSuccess.getText().split("\n")[1];			
 		}
+		return alertSuccess;
 	}
+	
 	/*This function return count of cart, compare and wishlist*/
 	public int productCountOf(String type) {
 		String productCountOf = null;
