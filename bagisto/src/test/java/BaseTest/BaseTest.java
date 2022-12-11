@@ -30,16 +30,14 @@ public class BaseTest {
 	public FileInputStream files;
 	
 	public WebDriver initlizeBrowser() throws IOException {
-		getGlobalProperty();
-		prop.load(files);	
+		getGlobalProperty();	
 		SHOP_URL = prop.getProperty("SHOP_URL");
 		ADMIN_URL =prop.getProperty("ADMIN_URL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");			
 		if (browserName.equalsIgnoreCase("chrome")) {		
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();			
-		} else if (browserName.equalsIgnoreCase("fireFox")) {
-					
+		} else if (browserName.equalsIgnoreCase("fireFox")) {			
 			System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");
 			driver = new FirefoxDriver();
 		} else if (browserName.equalsIgnoreCase("edge")) {
@@ -47,7 +45,6 @@ public class BaseTest {
 		} else {
 			System.out.println("I AM ELSE AND BROWSER NAME=" + browserName);
 		}
-
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.manage().window().maximize();
 		return driver;
@@ -80,13 +77,9 @@ public class BaseTest {
 	}
 	
 	public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
-		
-		String jsonContent = 	FileUtils.readFileToString(new File(filePath),StandardCharsets.UTF_8);
-		
+		String jsonContent = 	FileUtils.readFileToString(new File(filePath),StandardCharsets.UTF_8);	
 		ObjectMapper mapper = new ObjectMapper();
-		 List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
-	      });
-		 
+		 List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {}); 
 		 return data;			
 	}
 
@@ -105,5 +98,6 @@ public class BaseTest {
 	public void getGlobalProperty() throws IOException {
 	 prop = new Properties(); 
 	 files = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\GlobalData.properties");
+	 prop.load(files);
 	}
 }
