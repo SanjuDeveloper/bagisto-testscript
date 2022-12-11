@@ -2,40 +2,35 @@
 <testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-11T12:48:13 IST" name="Default suite" finished-at="2022-12-11T12:49:23 IST" duration-ms="69725">
+  <suite started-at="2022-12-11T15:02:06 IST" name="Default suite" finished-at="2022-12-11T15:02:44 IST" duration-ms="37839">
     <groups>
       <group name="LaunchShopTest.openBrowser">
         <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
       </group> <!-- LaunchShopTest.openBrowser -->
       <group name="CustomerLoginTest.customerLogin">
-        <method signature="CustomerLoginTest.customerLogin(java.lang.String,java.lang.String)[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" name="customerLogin" class="shop.Tests.CustomerLoginTest"/>
+        <method signature="CustomerLoginTest.customerLogin(java.util.HashMap)[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" name="customerLogin" class="shop.Tests.CustomerLoginTest"/>
       </group> <!-- CustomerLoginTest.customerLogin -->
     </groups>
-    <test started-at="2022-12-11T12:48:13 IST" name="Default test" finished-at="2022-12-11T12:49:23 IST" duration-ms="69725">
+    <test started-at="2022-12-11T15:02:06 IST" name="Default test" finished-at="2022-12-11T15:02:44 IST" duration-ms="37839">
       <class name="shop.Tests.CustomerLoginTest">
-        <test-method signature="customerLogin(java.lang.String,java.lang.String)[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" started-at="2022-12-11T12:48:53 IST" name="customerLogin" data-provider="usernameAndPass" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-11T12:49:04 IST" duration-ms="10672" status="PASS">
+        <test-method signature="customerLogin(java.util.HashMap)[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" started-at="2022-12-11T15:02:18 IST" name="customerLogin" data-provider="getUserandPass" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-11T15:02:25 IST" duration-ms="7291" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[admin@example.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Admin123]]>
+                <![CDATA[{password=Admin123, email=admin@example.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- customerLogin -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" started-at="2022-12-11T12:49:04 IST" name="closeBrowser" finished-at="2022-12-11T12:49:04 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" started-at="2022-12-11T15:02:25 IST" name="closeBrowser" finished-at="2022-12-11T15:02:25 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- shop.Tests.CustomerLoginTest -->
       <class name="shop.Tests.AddToWishListTest">
-        <test-method signature="addToWishlist()[pri:0, instance:shop.Tests.AddToWishListTest@72cc7e6f]" started-at="2022-12-11T12:49:04 IST" name="addToWishlist" depends-on-groups="LaunchShopTest.openBrowser, CustomerLoginTest.customerLogin" finished-at="2022-12-11T12:49:23 IST" duration-ms="19429" status="FAIL">
+        <test-method signature="addToWishlist()[pri:0, instance:shop.Tests.AddToWishListTest@72cc7e6f]" started-at="2022-12-11T15:02:25 IST" name="addToWishlist" depends-on-groups="LaunchShopTest.openBrowser, CustomerLoginTest.customerLogin" finished-at="2022-12-11T15:02:44 IST" duration-ms="18821" status="FAIL">
           <exception class="org.openqa.selenium.ElementNotInteractableException">
             <message>
               <![CDATA[element not interactable
@@ -43,10 +38,10 @@
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'DESKTOP-28161K9', ip: '192.168.68.233', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3cdde82817fcc5a41589bb3aa188e437, clickElement {id=12802398-2886-415d-bb18-7bfdcaae4142}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.99, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49380}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49380/devtoo..., se:cdpVersion: 108.0.5359.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (3cdde82817fcc5a41589bb3aa188e437)] -> xpath: //a[@title="Add product to wishlist"]]
-Session ID: 3cdde82817fcc5a41589bb3aa188e437]]>
+Command: [d2cffde362616b2319f0fd8c3b46322c, clickElement {id=6f4b7ed8-a160-45ba-b05a-91e1c8e0624f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.99, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:58071}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58071/devtoo..., se:cdpVersion: 108.0.5359.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (d2cffde362616b2319f0fd8c3b46322c)] -> xpath: //a[@title="Add product to wishlist"]]
+Session ID: d2cffde362616b2319f0fd8c3b46322c]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
@@ -54,10 +49,10 @@ Session ID: 3cdde82817fcc5a41589bb3aa188e437]]>
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'DESKTOP-28161K9', ip: '192.168.68.233', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3cdde82817fcc5a41589bb3aa188e437, clickElement {id=12802398-2886-415d-bb18-7bfdcaae4142}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.99, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49380}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49380/devtoo..., se:cdpVersion: 108.0.5359.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (3cdde82817fcc5a41589bb3aa188e437)] -> xpath: //a[@title="Add product to wishlist"]]
-Session ID: 3cdde82817fcc5a41589bb3aa188e437
+Command: [d2cffde362616b2319f0fd8c3b46322c, clickElement {id=6f4b7ed8-a160-45ba-b05a-91e1c8e0624f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.99, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:58071}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58071/devtoo..., se:cdpVersion: 108.0.5359.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (d2cffde362616b2319f0fd8c3b46322c)] -> xpath: //a[@title="Add product to wishlist"]]
+Session ID: d2cffde362616b2319f0fd8c3b46322c
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -72,8 +67,8 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at helpers.ProductActionHelper.addProductTo(ProductActionHelper.java:69)
-at shop.Tests.AddToWishListTest.addToWishlist(AddToWishListTest.java:13)
+at helpers.ProductActionHelper.addProductTo(ProductActionHelper.java:60)
+at shop.Tests.AddToWishListTest.addToWishlist(AddToWishListTest.java:14)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -110,11 +105,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
         </test-method> <!-- addToWishlist -->
       </class> <!-- shop.Tests.AddToWishListTest -->
       <class name="shop.Tests.LaunchShopTest">
-        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" started-at="2022-12-11T12:48:13 IST" name="openBrowser" finished-at="2022-12-11T12:48:53 IST" duration-ms="39397" status="PASS">
+        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" started-at="2022-12-11T15:02:06 IST" name="openBrowser" finished-at="2022-12-11T15:02:16 IST" duration-ms="10346" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" started-at="2022-12-11T12:48:53 IST" name="closeBrowser" finished-at="2022-12-11T12:48:53 IST" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" started-at="2022-12-11T15:02:16 IST" name="closeBrowser" finished-at="2022-12-11T15:02:16 IST" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
