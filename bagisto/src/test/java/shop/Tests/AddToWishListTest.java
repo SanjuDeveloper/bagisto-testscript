@@ -12,6 +12,7 @@ public class AddToWishListTest {
 		ProductActionHelper helper = new ProductActionHelper(BaseTest.driver);
 		helper.homeLogo.click();
 		String success_message = helper.addProductTo("Wishlist",1);	
+		System.out.println(success_message);
 		Assert.assertEquals(success_message, "Success! Item Successfully Added To Wishlist.");
 	}
 }
