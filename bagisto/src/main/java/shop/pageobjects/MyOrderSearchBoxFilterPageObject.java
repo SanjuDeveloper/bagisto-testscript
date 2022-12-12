@@ -9,7 +9,7 @@ import Abstract.AbstractComponen;
 import helpers.SearchProductHelper;
 
 public class MyOrderSearchBoxFilterPageObject extends AbstractComponen {
-WebDriver driver;
+	WebDriver driver;
 	public MyOrderSearchBoxFilterPageObject(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
