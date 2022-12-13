@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results retried="1" ignored="0" total="3" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-12T23:34:24 IST" name="Suite" finished-at="2022-12-12T23:34:45 IST" duration-ms="21164">
+  <suite started-at="2022-12-13T22:47:27 IST" name="Suite" finished-at="2022-12-13T22:48:03 IST" duration-ms="36047">
     <groups>
       <group name="LaunchShopTest.openBrowser">
-        <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@68b32e3e]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
+        <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@39a2bb97]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
       </group> <!-- LaunchShopTest.openBrowser -->
     </groups>
-    <test started-at="2022-12-12T23:34:24 IST" name="AddToCart" finished-at="2022-12-12T23:34:45 IST" duration-ms="21164">
+    <test started-at="2022-12-13T22:47:27 IST" name="AddToCart" finished-at="2022-12-13T22:48:03 IST" duration-ms="36047">
       <class name="shop.Tests.LaunchShopTest">
-        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@68b32e3e]" started-at="2022-12-12T23:34:24 IST" name="openBrowser" finished-at="2022-12-12T23:34:39 IST" duration-ms="14156" status="PASS">
+        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@39a2bb97]" started-at="2022-12-13T22:47:27 IST" name="openBrowser" finished-at="2022-12-13T22:47:48 IST" duration-ms="21414" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@68b32e3e]" started-at="2022-12-12T23:34:39 IST" name="closeBrowser" finished-at="2022-12-12T23:34:39 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@39a2bb97]" started-at="2022-12-13T22:47:48 IST" name="closeBrowser" finished-at="2022-12-13T22:47:48 IST" duration-ms="18" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- shop.Tests.LaunchShopTest -->
       <class name="shop.Tests.AddToCartTest">
-        <test-method signature="addToCart()[pri:0, instance:shop.Tests.AddToCartTest@539d019]" started-at="2022-12-12T23:34:39 IST" name="addToCart" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-12T23:34:45 IST" duration-ms="6060" status="FAIL">
+        <test-method retried="true" signature="addToCart()[pri:0, instance:shop.Tests.AddToCartTest@bcef303]" started-at="2022-12-13T22:47:49 IST" name="addToCart" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-13T22:48:00 IST" duration-ms="11349" status="SKIP">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [Success! 1Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]]]>
+              <![CDATA[expected [Success! 11Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Success! 1Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]
+              <![CDATA[java.lang.AssertionError: expected [Success! 11Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]
 at org.testng.Assert.fail(Assert.java:110)
 at org.testng.Assert.failNotEquals(Assert.java:1413)
 at org.testng.Assert.assertEqualsImpl(Assert.java:149)
 at org.testng.Assert.assertEquals(Assert.java:131)
 at org.testng.Assert.assertEquals(Assert.java:655)
 at org.testng.Assert.assertEquals(Assert.java:665)
-at shop.Tests.AddToCartTest.addToCart(AddToCartTest.java:17)
+at shop.Tests.AddToCartTest.addToCart(AddToCartTest.java:18)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -68,7 +68,59 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCart -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.AddToCartTest@539d019]" started-at="2022-12-12T23:34:45 IST" name="closeBrowser" finished-at="2022-12-12T23:34:45 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.AddToCartTest@bcef303]" started-at="2022-12-13T22:48:00 IST" name="closeBrowser" finished-at="2022-12-13T22:48:00 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method signature="addToCart()[pri:0, instance:shop.Tests.AddToCartTest@bcef303]" started-at="2022-12-13T22:48:00 IST" name="addToCart" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-13T22:48:01 IST" duration-ms="1155" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Success! 11Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Success! 11Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at org.testng.Assert.assertEquals(Assert.java:665)
+at shop.Tests.AddToCartTest.addToCart(AddToCartTest.java:18)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCart -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.AddToCartTest@bcef303]" started-at="2022-12-13T22:48:03 IST" name="closeBrowser" finished-at="2022-12-13T22:48:03 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

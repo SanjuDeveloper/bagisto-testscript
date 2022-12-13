@@ -13,11 +13,13 @@ import resources.ExtentReporterNG;
 public class Listeners extends BaseTest implements ITestListener  {
 	ExtentTest test;
 	ExtentReports extent  = ExtentReporterNG.getReportObject();
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal(); // Each Test have separat id, this is use to overcome concurrency issue is test case execution
 	//ITestListener is a interface povided by testng
 	@Override
 	public void onTestStart(ITestResult result) {
 		//Entry point for test
 		test = extent.createTest(result.getMethod().getMethodName());
+		extentTest.set(test); //Unique thread id
 	}
 	
 	public void onTestSuccesst(ITestResult result) {
@@ -25,6 +27,7 @@ public class Listeners extends BaseTest implements ITestListener  {
 	}
 	
 	public void onTestFailure(ITestResult result) {
+	    extentTest.get().fail(result.getThrowable());
 		try {
 			driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
 		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e1) {
@@ -38,7 +41,7 @@ public class Listeners extends BaseTest implements ITestListener  {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		test.addScreenCaptureFromPath(path, result.getMethod().getMethodName());
+		extentTest.get().addScreenCaptureFromPath(path, result.getMethod().getMethodName());
 	}
 	
 	public void onFinish(ITestContext context) {

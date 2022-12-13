@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>AddToCart</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/1</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Dec 12 23:34:24 IST 2022</td>
+<td>Started on:</td><td>Tue Dec 13 22:47:27 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>21 seconds (21164 ms)</td>
+<tr><td>Total time:</td><td>36 seconds (36047 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,18 +77,86 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='shop.Tests.AddToCartTest.addToCart()'><b>addToCart</b><br>Test class: shop.Tests.AddToCartTest</td>
-<td><div><pre>java.lang.AssertionError: expected [Success! 1Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]
-	at shop.Tests.AddToCartTest.addToCart(AddToCartTest.java:17)
+<td><div><pre>java.lang.AssertionError: expected [Success! 11Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]
+	at shop.Tests.AddToCartTest.addToCart(AddToCartTest.java:18)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1771292895", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1771292895'><pre>java.lang.AssertionError: expected [Success! 1Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace569305423", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace569305423'><pre>java.lang.AssertionError: expected [Success! 11Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
 	at org.testng.Assert.assertEquals(Assert.java:131)
 	at org.testng.Assert.assertEquals(Assert.java:655)
 	at org.testng.Assert.assertEquals(Assert.java:665)
-	at shop.Tests.AddToCartTest.addToCart(AddToCartTest.java:17)
+	at shop.Tests.AddToCartTest.addToCart(AddToCartTest.java:18)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>1</td>
+<td>shop.Tests.AddToCartTest@bcef303</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='shop.Tests.LaunchShopTest.openBrowser()'><b>openBrowser</b><br>Test class: shop.Tests.LaunchShopTest</td>
+<td></td>
+<td>21</td>
+<td>shop.Tests.LaunchShopTest@39a2bb97</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='shop.Tests.AddToCartTest.addToCart()'><b>addToCart</b><br>Test class: shop.Tests.AddToCartTest</td>
+<td><div><pre>java.lang.AssertionError: expected [Success! 11Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]
+	at shop.Tests.AddToCartTest.addToCart(AddToCartTest.java:18)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace309790180", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace309790180'><pre>java.lang.AssertionError: expected [Success! 11Item is successfully added to cart..] but found [Success! Item is successfully added to cart..]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at shop.Tests.AddToCartTest.addToCart(AddToCartTest.java:18)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -118,22 +186,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>6</td>
-<td>shop.Tests.AddToCartTest@539d019</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='shop.Tests.LaunchShopTest.openBrowser()'><b>openBrowser</b><br>Test class: shop.Tests.LaunchShopTest</td>
-<td></td>
-<td>14</td>
-<td>shop.Tests.LaunchShopTest@68b32e3e</td></tr>
+<td>11</td>
+<td>shop.Tests.AddToCartTest@bcef303</td></tr>
 </table><p>
 </body>
 </html>

@@ -6,9 +6,9 @@
   </listeners>
    <test thread-count="5" name="AddToCart">
   	<classes>
-			<class name="shop.Tests.AddToCartTest" />
-			<!--Humne isme LaunchShopTest esliye call kra hai kyoki AddToCartTest LaunchShopTest pe depend hai-->
+  		<!--Humne isme LaunchShopTest esliye call kra hai kyoki AddToCartTest LaunchShopTest pe depend hai-->
 			<class name="shop.Tests.LaunchShopTest" />
+			<class name="shop.Tests.AddToCartTest" />
 	</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
