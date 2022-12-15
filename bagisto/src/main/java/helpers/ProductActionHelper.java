@@ -52,8 +52,8 @@ WebDriver driver;
 		String alertSuccess = null;
 		for (int i=0; i<count; i++) {
 			switch(actiontoPerform) {
-			case "Cart":
-				addToCartButton.get(i).click();
+			case "Cart":			
+				addToCartButton.get(i).click();	
 				break;
 			case "Wishlist":
 				mouseHover(productPrice.get(i)); 
