@@ -11,7 +11,7 @@ import static org.openqa.selenium.support.locators.RelativeLocator.with;
 import Abstract.AbstractComponen;
 
 public class verifyShoppingCartProduct extends AbstractComponen {
-WebDriver driver;
+    WebDriver driver;
 	public verifyShoppingCartProduct(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -49,22 +49,22 @@ WebDriver driver;
 	   shoppingCart.click();
 	   float expectedCartSubTotal= 0 ;
 	   for (int i=0;i<totalProductOnCart.size();i++) {
-		   float price= remove$(totalProductOnCart.get(i).findElement(productPrice).getText());
-		   int quantity = Integer.parseInt(productQuantity.get(i).getAttribute("model"));
-		   float expectedProductSubTotal=0;
-		   float actualProductSubTotal = remove$(subTotal.get(i).getText());
-		   System.out.println("Product In cart: "+totalProductOnCart.get(i).findElement(productName).getText());
-		   System.out.println("Product Price: "+price);
-		   System.out.println("Product Quantiry: "+quantity);
-		   expectedProductSubTotal = price*quantity;
-		   Assert.assertEquals(actualProductSubTotal, expectedProductSubTotal);
-		   expectedCartSubTotal = expectedCartSubTotal+expectedProductSubTotal;
+		  float price= remove$(totalProductOnCart.get(i).findElement(productPrice).getText());
+		  int quantity = Integer.parseInt(productQuantity.get(i).getAttribute("model"));
+		  float expectedProductSubTotal=0;
+		  float actualProductSubTotal = remove$(subTotal.get(i).getText());
+		  System.out.println("Product In cart: "+totalProductOnCart.get(i).findElement(productName).getText());
+		  System.out.println("Product Price: "+price);
+		  System.out.println("Product Quantiry: "+quantity);
+		  expectedProductSubTotal = price*quantity;
+		  Assert.assertEquals(actualProductSubTotal, expectedProductSubTotal);
+		  expectedCartSubTotal = expectedCartSubTotal+expectedProductSubTotal;
 	   }
-	   	   System.out.println("Expected Cart SubTotal: "+expectedCartSubTotal);
-	       float actualCartSubTotal = remove$(driver.findElement(with(spanTag).toLeftOf(cartSubTotal)).getText());
-	       // Relative locator for cart summary sub total. Only accept By locator in Relative locator
-	       System.out.println("Whole Cart SubTotal: "+actualCartSubTotal);
-	       Assert.assertEquals(actualCartSubTotal, expectedCartSubTotal);
+	   	  System.out.println("Expected Cart SubTotal: "+expectedCartSubTotal);
+	   	  // Relative locator for cart summary sub total. Only accept By locator in Relative locator
+	      float actualCartSubTotal = remove$(driver.findElement(with(spanTag).toLeftOf(cartSubTotal)).getText());
+	      System.out.println("Whole Cart SubTotal: "+actualCartSubTotal);
+	      Assert.assertEquals(actualCartSubTotal, expectedCartSubTotal);
    }
 }
 
