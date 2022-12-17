@@ -1,10 +1,14 @@
 package helpers;
 
 import java.util.List;
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
 import Abstract.AbstractComponen;
 
 public class ProductActionHelper extends AbstractComponen {
@@ -47,6 +51,24 @@ WebDriver driver;
 	
 	@FindBy(xpath="//div[contains(@class,\"alert-dismissible\")]")
 	WebElement alertOfSuccess;
+	
+	@FindBy(css = "a[class=\"product-image-container\"]")
+	List<WebElement> productimage;
+	
+	@FindBy (css=".price-label")
+	WebElement productLabel;
+	
+	@FindBy(css="input[id=\"quantity-changer\"]")
+	WebElement quantity;
+	
+	@FindBy(css="select[id=\"attribute_23\"]")
+	WebElement configColor;
+	
+	@FindBy(css="select[id=\"attribute_24\"]")
+	WebElement configSize;
+	
+	@FindBy(css="a[class=\"close\"]")
+	WebElement closeButton;
 	
 	public String addProductTo(String actiontoPerform,int count) throws InterruptedException {
 		String alertSuccess = null;
@@ -91,5 +113,37 @@ WebDriver driver;
 			System.out.println("Action on "+type+" not found");
 		}
 		   return Integer.parseInt(productCountOf);
+	}
+	
+	public void setQuantity(String addQuantity) {
+		quantity.sendKeys(Keys.BACK_SPACE);
+		quantity.sendKeys(addQuantity);
+	}
+	
+	public void checkAddButton() throws InterruptedException {
+		for(int i=0;i<productimage.size();i++) {
+			 System.out.println(addToCartButton.get(i).isEnabled());		
+				  if( addToCartButton.get(i).isEnabled()) { 
+					  productimage.get(i).click();
+					  }		  	  
+				  break;
+		} 
+		switch(productLabel.getText()) {
+		case "As low as":
+			setQuantity("1");
+			Select varinat1= selectDropdown(configColor);
+			varinat1.selectByVisibleText("Red");
+			Select varinat2 = selectDropdown(configSize);
+			varinat2.selectByVisibleText("S");
+			String successMessage = addProductTo("Cart",1);
+			System.out.println(successMessage);
+			closeButton.click();
+			break;
+		case "":
+			break;
+		default :
+			homeLogo.click();
+			break;
+		}
 	}
 }

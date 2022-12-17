@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.IOException;
@@ -67,6 +68,10 @@ public class AbstractComponen {
 		actionClass.moveToElement(findBy).build().perform();
 	}
 	
+	public Select selectDropdown(WebElement selectdropDown) {
+		Select selectDrop = new Select(selectdropDown);
+		return selectDrop;
+	}
 	public String getScreenshot(String testClassNmae, WebDriver driver) throws IOException {
 		TakesScreenshot ss = (TakesScreenshot) driver; //TakesScreenshot IS INTERFACE.
 		File source = ss.getScreenshotAs(OutputType.FILE); //getScreenshotAs Is method of TakesScreenshot interface.
