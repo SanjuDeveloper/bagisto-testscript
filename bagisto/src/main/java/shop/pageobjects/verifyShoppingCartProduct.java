@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
-
 import Abstract.AbstractComponen;
 
 public class verifyShoppingCartProduct extends AbstractComponen {
