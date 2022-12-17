@@ -60,11 +60,11 @@ public class verifyShoppingCartProduct extends AbstractComponen {
 		  Assert.assertEquals(actualProductSubTotal, expectedProductSubTotal);
 		  expectedCartSubTotal = expectedCartSubTotal+expectedProductSubTotal;
 	   }
-	   	  System.out.println("Expected Cart SubTotal: "+expectedCartSubTotal);
-	   	  // Relative locator for cart summary sub total. Only accept By locator in Relative locator
-	      float actualCartSubTotal = remove$(driver.findElement(with(spanTag).toLeftOf(cartSubTotal)).getText());
-	      System.out.println("Whole Cart SubTotal: "+actualCartSubTotal);
-	      Assert.assertEquals(actualCartSubTotal, expectedCartSubTotal);
+	   System.out.println("Expected Cart SubTotal: "+expectedCartSubTotal);
+	   // Relative locator for cart summary sub total. Only accept By locator in Relative locator
+	   float actualCartSubTotal = remove$(driver.findElement(with(spanTag).toLeftOf(cartSubTotal)).getText());
+	   System.out.println("Whole Cart SubTotal: "+actualCartSubTotal);
+	   Assert.assertEquals(actualCartSubTotal, expectedCartSubTotal);
    }
 }
 
