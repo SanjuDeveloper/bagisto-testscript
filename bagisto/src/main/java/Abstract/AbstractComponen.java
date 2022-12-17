@@ -72,6 +72,12 @@ public class AbstractComponen {
 		Select selectDrop = new Select(selectdropDown);
 		return selectDrop;
 	}
+	
+	public Float remove$(String price) {
+	   Float a = Float.parseFloat(price.replaceAll("[-+$^]*", ""));
+	   return a;	
+	}
+	
 	public String getScreenshot(String testClassNmae, WebDriver driver) throws IOException {
 		TakesScreenshot ss = (TakesScreenshot) driver; //TakesScreenshot IS INTERFACE.
 		File source = ss.getScreenshotAs(OutputType.FILE); //getScreenshotAs Is method of TakesScreenshot interface.

@@ -121,12 +121,11 @@ WebDriver driver;
 	}
 	
 	public void checkAddButton() throws InterruptedException {
-		for(int i=0;i<productimage.size();i++) {
-			 System.out.println(addToCartButton.get(i).isEnabled());		
+		for(int i=0;i<productimage.size();i++) {		
 				  if( addToCartButton.get(i).isEnabled()) { 
 					  productimage.get(i).click();
 					  }		  	  
-				  break;
+				       break;
 		} 
 		switch(productLabel.getText()) {
 		case "As low as":
