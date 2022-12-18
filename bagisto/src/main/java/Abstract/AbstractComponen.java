@@ -26,11 +26,18 @@ public class AbstractComponen {
 	public  void waitForElementToAppear(By findBy) {
 		WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(10)); 
 		waite.until(ExpectedConditions.visibilityOfElementLocated(findBy));
+		
 	}
 	
 	public void waitForWebElementToAppear(WebElement findBy) {
 		WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(10)); 
 		waite.until(ExpectedConditions.visibilityOf(findBy));
+		
+	}
+	
+	public void waitForWebElementVisible(WebElement findBy) {
+		WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(10)); 
+		waite.until(ExpectedConditions.visibilityOfAllElements(findBy));
 	}
 	
 	public void waitForWebElementToDisappear(WebElement findBy) {

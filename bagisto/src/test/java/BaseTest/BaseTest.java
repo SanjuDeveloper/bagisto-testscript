@@ -92,10 +92,6 @@ public class BaseTest {
 		return System.getProperty("user.dir") + "//Reports//" + testClassNmae + ".png";
 	}
 
-	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
-
-	}
 	public void getGlobalProperty() throws IOException {
 	 prop = new Properties(); 
 	 files = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\GlobalData.properties");

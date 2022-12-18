@@ -70,6 +70,12 @@ WebDriver driver;
 	@FindBy(css="a[class=\"close\"]")
 	WebElement closeButton;
 	
+	@FindBy(css="div[id=\"mini-cart\"]")
+	WebElement miniCart;
+	
+	@FindBy(xpath="//a[text()='View Shopping Cart']")
+	WebElement shoppingCart;
+	
 	public String addProductTo(String actiontoPerform,int count) throws InterruptedException {
 		String alertSuccess = null;
 		for (int i=0; i<count; i++) {
@@ -141,8 +147,17 @@ WebDriver driver;
 		case "":
 			break;
 		default :
-			homeLogo.click();
+			goToHomePage();
 			break;
 		}
+	}
+	
+	public void goToCartPage() {
+		 miniCart.click();
+		 shoppingCart.click();
+	}
+	
+	public void goToHomePage() {
+		homeLogo.click();
 	}
 }
