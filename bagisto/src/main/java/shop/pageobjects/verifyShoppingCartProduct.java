@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import static org.openqa.selenium.support.locators.RelativeLocator.with;
 import Abstract.AbstractComponen;
 import helpers.ProductActionHelper;
 
@@ -36,6 +35,10 @@ public class verifyShoppingCartProduct extends AbstractComponen {
 	WebElement checkoutButton;
 	
 	// use following sibling locator to grab grandTotal and discountPrice
+	
+	@FindBy(xpath="//span[text()=\"Sub Total\"]/following-sibling::span")
+	WebElement subtotal;
+	
 	@FindBy (xpath="//span[text()=\"Amount discounted\"]/following-sibling::span")
 	WebElement discount;
 
@@ -60,11 +63,19 @@ public class verifyShoppingCartProduct extends AbstractComponen {
 	@FindBy (css="button[id=\"checkout-place-order-button\"]")
 	WebElement placeOrder;
 	
-	@FindBy (xpath="(//div[contains(@class,'order-success-content')]//p)[1]")
+	@FindBy (css="div[class*=\"order-success-content\"] a")
 	WebElement orderSuccess;
+	
+	By order = By.cssSelector("div[class*=\"order-success-content\"] a");
 	
 	@FindBy (css="div[class*=\"order-success-content\"]")
 	WebElement orderComplete;
+	
+	@FindBy (css="div[class*=\"order-success-content\"] h1")
+	WebElement thankyouOrder;
+	
+	@FindBy (css="div[class*=\"item-attribute\"]")
+	List<WebElement> bundleQuantity;
 	
 	By cartSubTotal = By.xpath("//span[text()=\"Sub Total\"]");
 	
@@ -74,25 +85,34 @@ public class verifyShoppingCartProduct extends AbstractComponen {
 	
 	By spanTag = By.tagName("span");
 	
+	/* Vew Cart page, product quantity
+	 *  Price , subtotal , discount, GrandTotal */
     public void verifyShoppingCart() throws InterruptedException {
     	ProductActionHelper action = new ProductActionHelper(driver);
     	action.goToCartPage();
 	   float expectedCartSubTotal= 0 ;
+	   int quantity=0;
 	   for (int i=0;i<totalProductOnCart.size();i++) {
 		  float price= remove$(totalProductOnCart.get(i).findElement(productPrice).getText());
-		  int quantity = Integer.parseInt(productQuantity.get(i).getAttribute("model"));
+		  if(productQuantity.size()==0) {
+			  quantity = bundleQuantity.size();
+		  }
+		  else {
+		      quantity = Integer.parseInt(productQuantity.get(i).getAttribute("model"));
+		  }
 		  float expectedProductSubTotal=0;
 		  float actualProductSubTotal = remove$(subTotal.get(i).getText());
 		  System.out.println("Product In cart: "+totalProductOnCart.get(i).findElement(productName).getText());
 		  System.out.println("Product Price: "+price);
-		  System.out.println("Product Quantiry: "+quantity);
+		  System.out.println("Product Quantity: "+quantity);
 		  expectedProductSubTotal = price*quantity;
 		  Assert.assertEquals(actualProductSubTotal, expectedProductSubTotal);
 		  expectedCartSubTotal = expectedCartSubTotal+expectedProductSubTotal; 
 	   }
 	   System.out.println("Expected Cart SubTotal: "+expectedCartSubTotal);
 	   // Relative locator for cart summary sub total. Only accept By locator in Relative locator
-	   float actualCartSubTotal = remove$(driver.findElement(with(spanTag).toLeftOf(cartSubTotal)).getText());
+	  // float actualCartSubTotal = remove$(driver.findElement(with(spanTag).toLeftOf(cartSubTotal)).getText());
+	   float actualCartSubTotal = remove$(subtotal.getText());
 	   System.out.println("Whole Cart SubTotal: "+actualCartSubTotal);
 	   Assert.assertEquals(actualCartSubTotal, expectedCartSubTotal);
 	   float discountAmount = remove$(discount.getText());
@@ -104,13 +124,15 @@ public class verifyShoppingCartProduct extends AbstractComponen {
 	   Assert.assertEquals(actualGrandTotal, expectedGrandTotal);
    }
     
+    /* Click Place Order Button after that select shipping address
+     * shipping method, Payment Method and print order id and thankyou message*/
     public void completeCheckoutProcess() throws InterruptedException {
     	  checkoutButton.click();
     	  for (int i = 0;i<shipAddress.size();i++) {
     		  shipAddressRadio.get(i).click();
     		  break;
     	  }
-    	  waitForWebElementToAppear(shipMethod.get(0));
+    	//  waitForWebElementToAppear(shipMethod.get(0));
     	  for(int i = 0;i<shipMethod.size();i++) {
     		  shippingMethodRadio.get(i).click();
     		  break;
@@ -120,9 +142,14 @@ public class verifyShoppingCartProduct extends AbstractComponen {
     		  break;
     	  }
     	  placeOrder.click();
-    	  Thread.sleep(5000);
-    	 // waitForWebElementVisible(orderComplete);
-          System.out.println(orderSuccess.getText());
+     	  boolean b=  driver.findElements(order).size()>0;
+          if(b) {
+        	  System.out.println(thankyouOrder.getText());
+        	  System.out.println("Your order id is # "+orderSuccess.getText());
+          }
+          else {
+        	 System.out.println(driver.getTitle());
+          }
     }
 }
 

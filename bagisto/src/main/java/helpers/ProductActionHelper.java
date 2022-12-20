@@ -1,14 +1,13 @@
 package helpers;
 
 import java.util.List;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
 import Abstract.AbstractComponen;
 
 public class ProductActionHelper extends AbstractComponen {
@@ -59,13 +58,22 @@ WebDriver driver;
 	WebElement productLabel;
 	
 	@FindBy(css="input[id=\"quantity-changer\"]")
-	WebElement quantity;
+	List<WebElement> quantity;
 	
 	@FindBy(css="select[id=\"attribute_23\"]")
 	WebElement configColor;
 	
+	By configColour = By.cssSelector("select[id=\"attribute_23\"]");
+	
 	@FindBy(css="select[id=\"attribute_24\"]")
 	WebElement configSize;
+	
+	By configsize = By.cssSelector("select[id=\"attribute_24\"]");
+	
+	@FindBy (css="input[id*=\"bundle_options\"]")
+	List<WebElement> bundleoption;
+	
+	By bundleOption = By.cssSelector("input[id*=\"bundle_options\"]");
 	
 	@FindBy(css="a[class=\"close\"]")
 	WebElement closeButton;
@@ -75,6 +83,9 @@ WebDriver driver;
 	
 	@FindBy(xpath="//a[text()='View Shopping Cart']")
 	WebElement shoppingCart;
+	
+	@FindBy(xpath="(//div[@class=\"grouped-product-list\"]//li)")
+	List<WebElement> groupProduct;
 	
 	public String addProductTo(String actiontoPerform,int count) throws InterruptedException {
 		String alertSuccess = null;
@@ -121,42 +132,58 @@ WebDriver driver;
 		   return Integer.parseInt(productCountOf);
 	}
 	
+	/* Function is use to set quantity of 
+	the product to add to cart from product view page*/
 	public void setQuantity(String addQuantity) {
-		quantity.sendKeys(Keys.BACK_SPACE);
-		quantity.sendKeys(addQuantity);
+		for(int i=0;i<quantity.size();i++) {
+		quantity.get(i).sendKeys(Keys.BACK_SPACE);
+		quantity.get(i).sendKeys(addQuantity);
+		}
 	}
 	
+	/*Add all types of product to cart and print 
+	  successful add to cart message*/
 	public void checkAddButton() throws InterruptedException {
+		String successMessage;
 		for(int i=0;i<productimage.size();i++) {		
 				  if( addToCartButton.get(i).isEnabled()) { 
 					  productimage.get(i).click();
 					  }		  	  
 				       break;
-		} 
-		switch(productLabel.getText()) {
-		case "As low as":
+		    } 
+			boolean color = driver.findElements(configColour).size()>0;
+			boolean size = driver.findElements(configsize).size()>0;
+			boolean bundlecheck =  driver.findElements(bundleOption).size()>0;
+			if(bundlecheck) {
+				for(int i=0;i<bundleoption.size();i++) {
+					if(bundleoption.get(i).isSelected()){
+					}
+					else {
+						bundleoption.get(i).click();
+					}
+				}
+			}
 			setQuantity("1");
+			if(color) {
 			Select varinat1= selectDropdown(configColor);
 			varinat1.selectByVisibleText("Red");
+			}
+			if (size) {
 			Select varinat2 = selectDropdown(configSize);
 			varinat2.selectByVisibleText("S");
-			String successMessage = addProductTo("Cart",1);
-			System.out.println(successMessage);
+			}
+			 successMessage = addProductTo("Cart",1);
+			 System.out.println(successMessage);
 			closeButton.click();
-			break;
-		case "":
-			break;
-		default :
-			goToHomePage();
-			break;
-		}
 	}
 	
+	// Go to View and Edit cart page
 	public void goToCartPage() {
 		 miniCart.click();
 		 shoppingCart.click();
 	}
 	
+	// Click Header logo to navigate to home page
 	public void goToHomePage() {
 		homeLogo.click();
 	}

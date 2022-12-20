@@ -9,12 +9,6 @@
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- shop.Tests.productCheckoutLoginUserTest -->
-      <class name="shop.Tests.CustomerLoginTest">
-        <methods>
-          <include name="customerLogin" invocation-numbers="0"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- shop.Tests.CustomerLoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
