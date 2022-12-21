@@ -35,7 +35,6 @@ public class verifyShoppingCartProduct extends AbstractComponen {
 	WebElement checkoutButton;
 	
 	// use following sibling locator to grab grandTotal and discountPrice
-	
 	@FindBy(xpath="//span[text()=\"Sub Total\"]/following-sibling::span")
 	WebElement subtotal;
 	
@@ -45,20 +44,14 @@ public class verifyShoppingCartProduct extends AbstractComponen {
 	@FindBy (xpath="//span[text()=\"Grand Total\"]/following-sibling::span")
 	WebElement grandTotal;
 	
-	@FindBy (css="div[class*=\"address-container\"] div[class=\"card\"]")
-	List<WebElement> shipAddress;
+	@FindBy (css="input[name=\"billing[address_id]\"]")
+	WebElement shipAddressRadio;
 	
-	@FindBy (xpath="//input[@type=\"radio\" and @name=\"billing[address_id]\"]")
-	List<WebElement> shipAddressRadio;
+	@FindBy (css="input[id=\"free_free\"]")
+	WebElement shippingMethodRadio;
 	
-	@FindBy (css="div[class*=\"shipping-methods \"] input[name=\"shipping_method\"]")
-	List<WebElement> shipMethod;
-	
-	@FindBy (xpath="//input[@type=\"radio\" and @name=\"shipping_method\"]")
-	List<WebElement> shippingMethodRadio;
-	
-	@FindBy (css="div[class=\"payment-methods\"] input[name=\"payment[method]\"]")
-	List<WebElement> paymentMethod;
+	@FindBy (css="input[id=\"cashondelivery\"]")
+	WebElement paymentMethod;
 	
 	@FindBy (css="button[id=\"checkout-place-order-button\"]")
 	WebElement placeOrder;
@@ -128,19 +121,9 @@ public class verifyShoppingCartProduct extends AbstractComponen {
      * shipping method, Payment Method and print order id and thankyou message*/
     public void completeCheckoutProcess() throws InterruptedException {
     	  checkoutButton.click();
-    	  for (int i = 0;i<shipAddress.size();i++) {
-    		  shipAddressRadio.get(i).click();
-    		  break;
-    	  }
-    	//  waitForWebElementToAppear(shipMethod.get(0));
-    	  for(int i = 0;i<shipMethod.size();i++) {
-    		  shippingMethodRadio.get(i).click();
-    		  break;
-    	  }
-    	  for (int i=0;i<paymentMethod.size();i++) {
-    		  paymentMethod.get(1).click();
-    		  break;
-    	  }
+    	  shipAddressRadio.click();
+    	  shippingMethodRadio.click();
+    	  paymentMethod.click();
     	  placeOrder.click();
      	  boolean b=  driver.findElements(order).size()>0;
           if(b) {

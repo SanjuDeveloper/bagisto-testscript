@@ -9,11 +9,11 @@ import shop.pageobjects.verifyShoppingCartProduct;
 public class productCheckoutLoginUserTest extends BaseTest {
 	@Test(dependsOnGroups= {"LaunchShopTest.openBrowser","CustomerLoginTest.customerLogin"},retryAnalyzer=Retry.class)
 	public void productCheckout() throws InterruptedException {
-		 ProductActionHelper action = new ProductActionHelper(BaseTest.driver);
-		 verifyShoppingCartProduct cart = new verifyShoppingCartProduct(BaseTest.driver);
-		 action.goToHomePage();
-		 action.checkAddButton();
-		 cart.verifyShoppingCart();
-		 cart.completeCheckoutProcess();
+		 ProductActionHelper ProductActiohelper = new ProductActionHelper(BaseTest.driver);
+		 verifyShoppingCartProduct verifyShoppingCartproduct = new verifyShoppingCartProduct(BaseTest.driver);
+		 ProductActiohelper.goToHomePage();
+		 ProductActiohelper.checkAddButton();
+		 verifyShoppingCartproduct.verifyShoppingCart();
+		 verifyShoppingCartproduct.completeCheckoutProcess();
 	}
 }

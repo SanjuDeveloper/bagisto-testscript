@@ -81,8 +81,8 @@ public class AbstractComponen {
 	}
 	
 	public Float remove$(String price) {
-	   Float a = Float.parseFloat(price.replaceAll("[-+$^]*", ""));
-	   return a;	
+	   Float actualPrice = Float.parseFloat(price.replaceAll("[^a-zA-Z0-9.]", ""));
+	   return actualPrice;	
 	}
 	
 	public String getScreenshot(String testClassNmae, WebDriver driver) throws IOException {
