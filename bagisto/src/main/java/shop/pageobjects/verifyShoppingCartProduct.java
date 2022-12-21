@@ -94,14 +94,14 @@ public class verifyShoppingCartProduct extends AbstractComponen {
 	   int quantity=0;
 	   for (int i=0;i<totalProductOnCart.size();i++) {
 		  float price= remove$(totalProductOnCart.get(i).findElement(productPrice).getText());
+		  float actualProductSubTotal = remove$(subTotal.get(i).getText());
 		  if(productQuantity.size()==0) {
-			  quantity = bundleQuantity.size();
+			  quantity =  (int) (actualProductSubTotal/price);
 		  }
 		  else {
 		      quantity = Integer.parseInt(productQuantity.get(i).getAttribute("model"));
 		  }
-		  float expectedProductSubTotal=0;
-		  float actualProductSubTotal = remove$(subTotal.get(i).getText());
+		  float expectedProductSubTotal=0;  
 		  System.out.println("Product In cart: "+totalProductOnCart.get(i).findElement(productName).getText());
 		  System.out.println("Product Price: "+price);
 		  System.out.println("Product Quantity: "+quantity);

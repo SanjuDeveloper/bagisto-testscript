@@ -75,6 +75,12 @@ WebDriver driver;
 	
 	By bundleOption = By.cssSelector("input[id*=\"bundle_options\"]");
 	
+	@FindBy (css="input[name=\"links[]\"]")
+	WebElement downloadlink;
+	
+	By downloadLink = By.cssSelector("input[name=\"links[]\"]");
+	
+	
 	@FindBy(css="a[class=\"close\"]")
 	WebElement closeButton;
 	
@@ -154,6 +160,10 @@ WebDriver driver;
 			boolean color = driver.findElements(configColour).size()>0;
 			boolean size = driver.findElements(configsize).size()>0;
 			boolean bundlecheck =  driver.findElements(bundleOption).size()>0;
+		    boolean downloadlink1 =	driver.findElements(downloadLink).size()>0;
+		    if(downloadlink1) {
+		    	downloadlink.click();
+		    }
 			if(bundlecheck) {
 				for(int i=0;i<bundleoption.size();i++) {
 					if(bundleoption.get(i).isSelected()){
