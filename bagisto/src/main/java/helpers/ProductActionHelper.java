@@ -1,5 +1,7 @@
 package helpers;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -11,15 +13,13 @@ import org.openqa.selenium.support.ui.Select;
 import Abstract.AbstractComponen;
 
 public class ProductActionHelper extends AbstractComponen {
+	int day;
 WebDriver driver;
 	public ProductActionHelper(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath="(//a[@aria-label=\"Logo\"])[1]")
-	public  WebElement homeLogo;
 	
 	@FindBy(xpath = "(//div[contains(@class,'product-card-new')])[1]")
 	public WebElement product;
@@ -73,13 +73,17 @@ WebDriver driver;
 	@FindBy (css="input[id*=\"bundle_options\"]")
 	List<WebElement> bundleoption;
 	
+	By datepicker = By.cssSelector("input[name=\"booking[date]\"]");
+	
+	@FindBy (css="input[name=\"booking[date]\"]")
+	WebElement datePicker;
+	
 	By bundleOption = By.cssSelector("input[id*=\"bundle_options\"]");
 	
 	@FindBy (css="input[name=\"links[]\"]")
 	WebElement downloadlink;
 	
 	By downloadLink = By.cssSelector("input[name=\"links[]\"]");
-	
 	
 	@FindBy(css="a[class=\"close\"]")
 	WebElement closeButton;
@@ -92,6 +96,16 @@ WebDriver driver;
 	
 	@FindBy(xpath="(//div[@class=\"grouped-product-list\"]//li)")
 	List<WebElement> groupProduct;
+	
+	
+	@FindBy(css="input[class*=\"cur-year\"]")
+	WebElement selectYear;
+	
+	@FindBy(xpath="//span[text()='10']")
+	WebElement selectDay;
+	
+   @FindBy(css="select[name=\"booking[slot]\"]")
+   WebElement selectSlot;
 	
 	public String addProductTo(String actiontoPerform,int count) throws InterruptedException {
 		String alertSuccess = null;
@@ -161,6 +175,8 @@ WebDriver driver;
 			boolean size = driver.findElements(configsize).size()>0;
 			boolean bundlecheck =  driver.findElements(bundleOption).size()>0;
 		    boolean downloadlink1 =	driver.findElements(downloadLink).size()>0;
+		    boolean datepick = driver.findElements(datepicker).size()>0;
+		    
 		    if(downloadlink1) {
 		    	downloadlink.click();
 		    }
@@ -182,19 +198,14 @@ WebDriver driver;
 			Select varinat2 = selectDropdown(configSize);
 			varinat2.selectByVisibleText("S");
 			}
+			if(datepick) {
+				datePicker.click();
+				handleCalendarDate(getDate("Today_Date","d"),getDate("Today_Date","MMMM"));
+			}
+			Thread.sleep(1000);
 			 successMessage = addProductTo("Cart",1);
 			 System.out.println(successMessage);
 			closeButton.click();
 	}
 	
-	// Go to View and Edit cart page
-	public void goToCartPage() {
-		 miniCart.click();
-		 shoppingCart.click();
-	}
-	
-	// Click Header logo to navigate to home page
-	public void goToHomePage() {
-		homeLogo.click();
-	}
 }

@@ -50,6 +50,8 @@ public class verifyShoppingCartProduct extends AbstractComponen {
 	@FindBy (css="input[id=\"free_free\"]")
 	WebElement shippingMethodRadio;
 	
+	By shippingMethod = By.cssSelector("input[id=\"free_free\"]");
+	
 	@FindBy (css="input[id=\"cashondelivery\"]")
 	WebElement paymentMethod;
 	
@@ -120,9 +122,12 @@ public class verifyShoppingCartProduct extends AbstractComponen {
     /* Click Place Order Button after that select shipping address
      * shipping method, Payment Method and print order id and thankyou message*/
     public void completeCheckoutProcess() throws InterruptedException {
+    	  boolean isShippable = driver.findElements(shippingMethod).size()>0;
     	  checkoutButton.click();
     	  shipAddressRadio.click();
+    	  if(isShippable) {
     	  shippingMethodRadio.click();
+    	  }
     	  paymentMethod.click();
     	  placeOrder.click();
      	  boolean b=  driver.findElements(order).size()>0;
