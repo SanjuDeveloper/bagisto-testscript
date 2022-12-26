@@ -14,12 +14,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import admin.pageObjects.LoginPageObject;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	
@@ -35,7 +33,6 @@ public class BaseTest {
 		ADMIN_URL =prop.getProperty("ADMIN_URL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");			
 		if (browserName.equalsIgnoreCase("chrome")) {		
-			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();			
 		} else if (browserName.equalsIgnoreCase("fireFox")) {			
 			System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");
