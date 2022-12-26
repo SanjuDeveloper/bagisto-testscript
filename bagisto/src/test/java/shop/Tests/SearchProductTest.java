@@ -12,7 +12,6 @@ public class SearchProductTest extends BaseTest {
 	public void searchItem() throws IOException, ParseException {
        SearchProductHelper search = new SearchProductHelper(BaseTest.driver);
        getGlobalProperty();
-	   prop.load(files);   // Geeting Product name from global data property file
        String productToSearch =  prop.getProperty("Product_To_Search");
 	   search.searchTerm(productToSearch);
 	   System.out.println(search.totalSearchResult.getText());  

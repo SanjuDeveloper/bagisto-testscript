@@ -7,7 +7,7 @@ import BaseTest.BaseTest;
 import helpers.ProductActionHelper;
 import shop.pageobjects.verifyShoppingCartProduct;
 
-public class CustomerCheckout extends BaseTest {
+public class CustomerCheckoutTest extends BaseTest {
 	@Test(dependsOnGroups= {"LaunchShopTest.openBrowser","CustomerLoginTest.customerLogin"})//,retryAnalyzer=Retry.class
 	public void productCheckout() throws InterruptedException {
 		 ProductActionHelper ProductActiohelper = new ProductActionHelper(BaseTest.driver);
