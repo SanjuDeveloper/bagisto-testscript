@@ -8,7 +8,7 @@ import helpers.ProductActionHelper;
 public class AddToCompareTest extends BaseTest {
 	@Test(dependsOnGroups = {"LaunchShopTest.openBrowser"})
 	public void addToCompare() throws InterruptedException, IOException {
-		ProductActionHelper aa = new ProductActionHelper(BaseTest.driver);
+		ProductActionHelper aa = new ProductActionHelper(driver);
 		aa.addProductTo("Compare",3);
 	}
 }

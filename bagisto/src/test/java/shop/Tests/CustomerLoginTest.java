@@ -9,7 +9,7 @@ public class CustomerLoginTest extends BaseTest {
 	
     @Test(groups= {"CustomerLoginTest.customerLogin"},dependsOnGroups = {"LaunchShopTest.openBrowser"}, dataProvider= "usernameAndPass")
 	public void customerLogin(String username, String password) throws InterruptedException {
-	CustomerLoginPageObject login = new CustomerLoginPageObject(BaseTest.driver);
+	CustomerLoginPageObject login = new CustomerLoginPageObject(driver);
 	login.customerLogin(username, password);
   }
     @DataProvider (name = "usernameAndPass")

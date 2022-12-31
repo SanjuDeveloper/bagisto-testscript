@@ -19,7 +19,7 @@ public class CreateProductPageObject extends AbstractComponen {
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//span[@class='icon catalog-icon']")
+	@FindBy(css="li a span[class*=\"catalog-icon\"]")
 	WebElement catalogIcon;
 	
 	@FindBy(linkText ="Add Product")
@@ -45,18 +45,34 @@ public class CreateProductPageObject extends AbstractComponen {
 	WebElement productName;
 		
 	@FindBy(css="label[for='new']")
+	WebElement NEWLABEL;
+	
+	@FindBy(xpath="//label[@for=\"new\"]/following-sibling::label")
 	WebElement NEW;
 	
 	@FindBy(xpath="//label[@for='featured']")
+	WebElement featuredLabel;
+	
+	@FindBy(xpath="//label[@for=\"featured\"]/following-sibling::label")
 	WebElement featured;
+	//label[@for="featured"]/following-sibling::label
 	
 	@FindBy(css="label[for='visible_individually']")
+	WebElement visibleIndividuallyLabel;
+	
+	@FindBy(xpath="//label[@for=\"visible_individually\"]/following-sibling::label")
 	WebElement visibleIndividually;
 	
 	@FindBy(xpath="//label[@for='guest_checkout']")
+	WebElement guestCheckoutLabel;
+	
+	@FindBy(xpath="//label[@for=\"guest_chaeckout\"]/following-sibling::label")
 	WebElement guestCheckout;
 	
 	@FindBy(xpath="//label[@for='status']")
+	WebElement statusLabel;
+	
+	@FindBy(xpath="//label[@for=\"status\"]/following-sibling::label")
 	WebElement status;
 	
 	@FindBy(xpath="//div[@class='page-content']/div[2]/div[1]")
@@ -111,25 +127,25 @@ public class CreateProductPageObject extends AbstractComponen {
 		scrollDown(driver,460);	
 		
 		System.out.println(NEW.isDisplayed());
-		waitForWebElementToAppear(NEW);
+		waitForWebElementToAppear(NEWLABEL);
 		NEW.click();
 		
-		System.out.println(NEW.isDisplayed());
-		waitForWebElementToAppear(featured);
+		System.out.println(featuredLabel.isDisplayed());
+		waitForWebElementToAppear(featuredLabel);
 		featured.click();
 		
-		System.out.println(visibleIndividually.isDisplayed());
-		waitForWebElementToAppear(visibleIndividually);
+		System.out.println(visibleIndividuallyLabel.isDisplayed());
+		waitForWebElementToAppear(visibleIndividuallyLabel);
 		visibleIndividually.click();
 		
-		System.out.println(guestCheckout.isDisplayed());
-		waitForWebElementToAppear(guestCheckout);
+		System.out.println(guestCheckoutLabel.isDisplayed());
+		waitForWebElementToAppear(guestCheckoutLabel);
 		guestCheckout.click();
 		
 		scrollDown(driver,360);
 		
-		System.out.println(status.isDisplayed());
-		waitForWebElementToAppear(status);
+		System.out.println(statusLabel.isDisplayed());
+		waitForWebElementToAppear(statusLabel);
 		status.click();
 		
 		scrollDown(driver,800);

@@ -12,7 +12,7 @@ public class verifyProductCountOfTest extends BaseTest {
 		/*change actionOn value to "Cart" , "Comapre" , "Wishlist" to perform action on particular*/
 		String actionOn = "Cart";
 		int productNeedToAdd = 3;
-		ProductActionHelper action = new ProductActionHelper(BaseTest.driver);
+		ProductActionHelper action = new ProductActionHelper(driver);
 		action.addProductTo(actionOn,productNeedToAdd);
 		/*Get Count of comapre, cart, wishlist which showing on comapre, wishlist, cart icon */
 		int getcount = action.productCountOf(actionOn);

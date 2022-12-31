@@ -11,7 +11,7 @@ public class searchProductTest extends BaseTest {
 
 	@Test(dependsOnGroups = { "LaunchShopTest.openBrowser" })
 	public void searchItem() throws IOException, ParseException {
-       SearchProductHelper search = new SearchProductHelper(BaseTest.driver);
+       SearchProductHelper search = new SearchProductHelper(driver);
        /*Geeting Product name from global data property file*/
        getGlobalProperty();
 	   prop.load(files);
