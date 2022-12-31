@@ -30,8 +30,7 @@ public class BaseTest {
 	public FileInputStream files;
 	
 	public WebDriver initlizeBrowser() throws IOException {
-		getGlobalProperty();
-		prop.load(files);	
+		getGlobalProperty();		
 		SHOP_URL = prop.getProperty("SHOP_URL");
 		ADMIN_URL =prop.getProperty("ADMIN_URL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");			
@@ -105,5 +104,6 @@ public class BaseTest {
 	public void getGlobalProperty() throws IOException {
 	 prop = new Properties(); 
 	 files = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\GlobalData.properties");
+	 prop.load(files);
 	}
 }

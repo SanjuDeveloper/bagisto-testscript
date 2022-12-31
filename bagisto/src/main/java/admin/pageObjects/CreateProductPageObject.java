@@ -66,7 +66,7 @@ public class CreateProductPageObject extends AbstractComponen {
 	@FindBy(xpath="//label[@for='guest_checkout']")
 	WebElement guestCheckoutLabel;
 	
-	@FindBy(xpath="//label[@for=\"guest_chaeckout\"]/following-sibling::label")
+	@FindBy(xpath="//label[@for=\"guest_checkout\"]/following-sibling::label")
 	WebElement guestCheckout;
 	
 	@FindBy(xpath="//label[@for='status']")
@@ -78,29 +78,44 @@ public class CreateProductPageObject extends AbstractComponen {
 	@FindBy(xpath="//div[@class='page-content']/div[2]/div[1]")
 	WebElement descriptionSection;
 	
-	@FindBy(xpath="//div[@class='page-content']/div[4]/div[1]")
+	@FindBy(css="textarea[id=\"short_description\"]")
+	WebElement shortDescriptionTextArea;
+	
+	@FindBy(css="textarea[id=\"description\"]")
+	WebElement descriptionTextArea;
+	
+	@FindBy(xpath="//div[@class='page-content']/div[4]")
 	WebElement priceSection;
 	
-	@FindBy(xpath="//div[@class='page-content']/div[5]/div[1]")
+	@FindBy(css="input[id=price]")
+    WebElement productPrice;
+	
+	@FindBy(xpath="//div[@class='page-content']/div[5]")
 	WebElement shippngSection;
 	
-	@FindBy(xpath="//div[@class='page-content']/div[6]/div[1]")
+	@FindBy(css="input[id=weight]")
+	WebElement weight;
+	
+	@FindBy(xpath="//div[@class='page-content']/div[6]")
 	WebElement inventorySection;
 	
-	@FindBy(xpath="//div[@class='page-content']/div[7]/div[1]")
+	@FindBy(css="input[name=\"inventories[1]\"]")
+	WebElement enterInventory;
+	
+	@FindBy(xpath="//div[@class='page-content']/div[7]")
 	WebElement imageSection;
 	
-	@FindBy(xpath="//*[@id=\"app\"]/div[4]/div/div[2]/div[2]/form/div[2]/div[7]/div[2]/div/div/div/label")
+	@FindBy(xpath="//label[contains(text(),'Add Image')]")
 	WebElement AddImage;
 	
-	@FindBy(css="label[class='image-item']")
+	@FindBy(css="label[class*=\"draggable\"]")
 	WebElement selectImage;
 	
 	By addButton = By.linkText("Add Product");
 	By selectType = By.id("type");
 	By productNameInputBox = By.cssSelector("input[id='name']");
 
-	public void createSimpleProduct() throws InterruptedException {
+	public void createSimpleProduct(String productsku) throws InterruptedException, IOException {
 		// Thread.sleep(5000); // wait for element load
 		 waitForWebElementToAppear(catalogIcon);
 		 catalogIcon.click();
@@ -113,18 +128,18 @@ public class CreateProductPageObject extends AbstractComponen {
 		 attributeFamily.click();
 		 Select Family = new Select(attributeFamily);
 		 Family.selectByVisibleText("Default"); // Select Attribute Family
-		 productSKU.sendKeys("mens-tshirt");
+		 productSKU.sendKeys(productsku);
 		 saveProduct.click();		
 		 if(successMessage.isDisplayed()) {
 			 //Take Screenshot
+			 getScreenshot(productsku, driver);
 		 }
 	}
 	
-	public void createdOrEditProduct() throws InterruptedException, IOException {
+	public void createdOrEditProduct(String description, String shortDescription) throws InterruptedException, IOException {
 	
 		waitForElementToAppear(productNameInputBox); //explicitly wait
-		productName.sendKeys("t-shirt");		
-		scrollDown(driver,460);	
+		productName.sendKeys("t-shirt");			
 		
 		System.out.println(NEW.isDisplayed());
 		waitForWebElementToAppear(NEWLABEL);
@@ -142,13 +157,23 @@ public class CreateProductPageObject extends AbstractComponen {
 		waitForWebElementToAppear(guestCheckoutLabel);
 		guestCheckout.click();
 		
-		scrollDown(driver,360);
-		
 		System.out.println(statusLabel.isDisplayed());
 		waitForWebElementToAppear(statusLabel);
 		status.click();
 		
-		scrollDown(driver,800);
+		descriptionSection.click();
+		shortDescriptionTextArea.sendKeys(shortDescription);
+		descriptionTextArea.sendKeys(description);
+		
+		priceSection.click();
+		productPrice.sendKeys("30");
+		
+		shippngSection.click();
+		weight.sendKeys("2");
+		
+		inventorySection.click();
+		doubeClick(enterInventory);
+		enterInventory.sendKeys("100");
 		
 		System.out.println(imageSection.isDisplayed());
 		waitForWebElementToAppear(imageSection);
@@ -162,7 +187,7 @@ public class CreateProductPageObject extends AbstractComponen {
 		System.out.println(selectImage.isDisplayed());
 		selectImage.click();
 		Thread.sleep(1000);
-		Runtime.getRuntime().exec("D:\\bagisto-testscript\\Fileupload.exe");
+		Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\Fileupload.exe");
 	}
 
 }

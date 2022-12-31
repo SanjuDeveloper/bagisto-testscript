@@ -14,7 +14,11 @@ public class CreateSimpleProduct extends BaseTest {
 	@Test(dependsOnGroups={"Login.adminLogin"})	
 	public void createProduct() throws InterruptedException, IOException {
 		CreateProductPageObject createProductObject = new CreateProductPageObject(driver);		
-		createProductObject.createSimpleProduct();
-		createProductObject.createdOrEditProduct();
+		getGlobalProperty();
+		String ProductSKU = prop.getProperty("PRODUCT_SKU");
+		createProductObject.createSimpleProduct(ProductSKU);
+		String description = prop.getProperty("PRODUCT_DESCRIPTION");
+		String shortDescription = prop.getProperty("PRODUCT_SHORTDESCRIPTION");
+		createProductObject.createdOrEditProduct(shortDescription , description);
 	}
 }

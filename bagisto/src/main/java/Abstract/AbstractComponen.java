@@ -69,6 +69,11 @@ public class AbstractComponen {
 		actionClass.moveToElement(findBy).build().perform();
 	}
 	
+	public void doubeClick(WebElement findBy) {
+		Actions actionClass = new Actions(driver);
+		actionClass.doubleClick(findBy).build().perform();
+	}
+	
 	public String getScreenshot(String testClassNmae, WebDriver driver) throws IOException {
 		TakesScreenshot ss = (TakesScreenshot) driver; //TakesScreenshot IS INTERFACE.
 		File source = ss.getScreenshotAs(OutputType.FILE); //getScreenshotAs Is method of TakesScreenshot interface.
