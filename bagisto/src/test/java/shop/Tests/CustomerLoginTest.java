@@ -1,7 +1,7 @@
 package shop.Tests;
 
 import org.testng.annotations.DataProvider;
-import BaseTest.BaseTest;
+import common.BaseTest;
 import org.testng.annotations.Test;
 import shop.pageobjects.CustomerLoginPageObject;
 

@@ -2,7 +2,7 @@ package shop.Tests;
 
 import org.testng.annotations.Test;
 import helpers.ProductActionHelper;
-import BaseTest.BaseTest;
+import common.BaseTest;
 
 public class ProductPageOperationTest extends BaseTest{
 	/*Perform add to cart, wishlist , compare perform from product page*/

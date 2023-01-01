@@ -1,7 +1,7 @@
 package shop.Tests;
 
 import org.testng.Assert;
-import BaseTest.BaseTest;
+import common.BaseTest;
 import org.testng.annotations.Test;
 import helpers.ProductActionHelper;
 
