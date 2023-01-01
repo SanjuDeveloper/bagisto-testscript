@@ -16,9 +16,9 @@ public class CreateSimpleProduct extends BaseTest {
 		CreateProductPageObject createProductObject = new CreateProductPageObject(driver);		
 		getGlobalProperty();
 		String ProductSKU = prop.getProperty("PRODUCT_SKU");
-		createProductObject.createSimpleProduct(ProductSKU);
 		String description = prop.getProperty("PRODUCT_DESCRIPTION");
 		String shortDescription = prop.getProperty("PRODUCT_SHORTDESCRIPTION");
+		createProductObject.createSimpleProduct(ProductSKU);
 		createProductObject.createdOrEditProduct(shortDescription , description);
 	}
 }
