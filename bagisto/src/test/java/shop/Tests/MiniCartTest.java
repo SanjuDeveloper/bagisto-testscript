@@ -5,7 +5,7 @@ import BaseTest.BaseTest;
 import org.testng.annotations.Test;
 import helpers.ProductActionHelper;
 
-public class verifyProductCountOfTest extends BaseTest {
+public class MiniCartTest extends BaseTest {
 	/*Function to verify count of actionOn = "Compare" we can change action according to need*/
 	@Test(dependsOnGroups ={ "LaunchShopTest.openBrowser"})
 	public void countVerify() throws InterruptedException {

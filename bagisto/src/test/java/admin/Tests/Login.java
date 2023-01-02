@@ -10,7 +10,10 @@ public class Login extends BaseTest {
 	
 	@Test(groups={"Login.adminLogin"})
 	public void adminLogin() throws IOException {
+		getGlobalProperty();
+		String email = prop.getProperty("AdminEmail");
+		String password = prop.getProperty("AdminPassWord");
 		LoginPageObject LoginPageObject = launcDashboard();
-		LoginPageObject.Login();
+		LoginPageObject.Login(email,password);
 	}
 }
