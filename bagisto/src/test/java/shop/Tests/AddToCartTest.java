@@ -3,7 +3,7 @@ package shop.Tests;
 import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import BaseTest.BaseTest;
+import common.BaseTest;
 import helpers.ProductActionHelper;
 import shop.TestComponents.Retry;
 

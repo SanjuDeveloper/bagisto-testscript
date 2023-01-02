@@ -7,7 +7,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import BaseTest.BaseTest;
+import common.BaseTest;
 import resources.ExtentReporterNG;
 
 public class Listeners extends BaseTest implements ITestListener  {

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import org.testng.annotations.DataProvider;
-import BaseTest.BaseTest;
+import common.BaseTest;
 import org.testng.annotations.Test;
 import shop.pageobjects.CustomerLoginPageObject;
 

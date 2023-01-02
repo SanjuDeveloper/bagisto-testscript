@@ -1,4 +1,4 @@
-package BaseTest;
+package common;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -29,6 +30,7 @@ public class BaseTest {
 	
 	public WebDriver initlizeBrowser() throws IOException {
 		getGlobalProperty();	
+		getGlobalProperty();		
 		SHOP_URL = prop.getProperty("SHOP_URL");
 		ADMIN_URL =prop.getProperty("ADMIN_URL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");			
@@ -89,6 +91,10 @@ public class BaseTest {
 		return System.getProperty("user.dir") + "//Reports//" + testClassNmae + ".png";
 	}
 
+	public void onTestStart(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
 	public void getGlobalProperty() throws IOException {
 	 prop = new Properties(); 
 	 files = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\GlobalData.properties");

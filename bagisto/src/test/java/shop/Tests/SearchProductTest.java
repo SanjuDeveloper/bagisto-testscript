@@ -1,6 +1,6 @@
 package shop.Tests;
 
-import BaseTest.BaseTest;
+import common.BaseTest;
 import java.io.IOException;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;

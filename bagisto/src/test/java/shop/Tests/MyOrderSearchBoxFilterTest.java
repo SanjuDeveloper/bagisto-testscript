@@ -3,7 +3,7 @@ package shop.Tests;
 import java.io.IOException;
 import org.junit.Assert;
 import org.testng.annotations.Test;
-import BaseTest.BaseTest;
+import common.BaseTest;
 import helpers.SearchProductHelper;
 import shop.pageobjects.MyOrderSearchBoxFilterPageObject;
 

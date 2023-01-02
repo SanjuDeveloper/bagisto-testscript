@@ -4,7 +4,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import helpers.ProductActionHelper;
-import BaseTest.BaseTest;
+import common.BaseTest;
 
 public class AddToWishListTest {
 	@Test(dependsOnGroups = {"LaunchShopTest.openBrowser","CustomerLoginTest.customerLogin"})

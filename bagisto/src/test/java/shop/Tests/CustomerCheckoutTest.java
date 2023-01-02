@@ -3,7 +3,7 @@ package shop.Tests;
 import org.testng.annotations.Test;
 
 import Abstract.AbstractComponen;
-import BaseTest.BaseTest;
+import common.BaseTest;
 import helpers.ProductActionHelper;
 import shop.pageobjects.verifyShoppingCartProduct;
 
