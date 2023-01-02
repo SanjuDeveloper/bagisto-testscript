@@ -2,29 +2,29 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-01T15:44:19 IST" name="Default suite" finished-at="2023-01-01T15:46:50 IST" duration-ms="151511">
+  <suite started-at="2023-01-02T22:03:52 IST" name="Default suite" finished-at="2023-01-02T22:04:49 IST" duration-ms="57865">
     <groups>
       <group name="Login.adminLogin">
-        <method signature="Login.adminLogin()[pri:0, instance:admin.Tests.Login@53fb3dab]" name="adminLogin" class="admin.Tests.Login"/>
+        <method signature="Login.adminLogin()[pri:0, instance:admin.Tests.Login@4b013c76]" name="adminLogin" class="admin.Tests.Login"/>
       </group> <!-- Login.adminLogin -->
     </groups>
-    <test started-at="2023-01-01T15:44:19 IST" name="Default test" finished-at="2023-01-01T15:46:50 IST" duration-ms="151511">
+    <test started-at="2023-01-02T22:03:52 IST" name="Default test" finished-at="2023-01-02T22:04:49 IST" duration-ms="57865">
       <class name="admin.Tests.CreateSimpleProduct">
-        <test-method signature="createProduct()[pri:0, instance:admin.Tests.CreateSimpleProduct@46cdf8bd]" started-at="2023-01-01T15:46:13 IST" name="createProduct" depends-on-groups="Login.adminLogin" finished-at="2023-01-01T15:46:50 IST" duration-ms="37307" status="PASS">
+        <test-method signature="createProduct()[pri:0, instance:admin.Tests.CreateSimpleProduct@2a7f1f10]" started-at="2023-01-02T22:04:13 IST" name="createProduct" depends-on-groups="Login.adminLogin" finished-at="2023-01-02T22:04:49 IST" duration-ms="36422" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createProduct -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.CreateSimpleProduct@46cdf8bd]" started-at="2023-01-01T15:46:50 IST" name="closeBrowser" finished-at="2023-01-01T15:46:50 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.CreateSimpleProduct@2a7f1f10]" started-at="2023-01-02T22:04:49 IST" name="closeBrowser" finished-at="2023-01-02T22:04:49 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- admin.Tests.CreateSimpleProduct -->
       <class name="admin.Tests.Login">
-        <test-method signature="adminLogin()[pri:0, instance:admin.Tests.Login@53fb3dab]" started-at="2023-01-01T15:44:19 IST" name="adminLogin" finished-at="2023-01-01T15:46:13 IST" duration-ms="113951" status="PASS">
+        <test-method signature="adminLogin()[pri:0, instance:admin.Tests.Login@4b013c76]" started-at="2023-01-02T22:03:52 IST" name="adminLogin" finished-at="2023-01-02T22:04:13 IST" duration-ms="21120" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminLogin -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.Login@53fb3dab]" started-at="2023-01-01T15:46:13 IST" name="closeBrowser" finished-at="2023-01-01T15:46:13 IST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.Login@4b013c76]" started-at="2023-01-02T22:04:13 IST" name="closeBrowser" finished-at="2023-01-02T22:04:13 IST" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

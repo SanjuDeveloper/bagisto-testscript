@@ -188,6 +188,8 @@ public class CreateProductPageObject extends AbstractComponen {
 		selectImage.click();
 		Thread.sleep(1000);
 		Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\Fileupload.exe");
+		Thread.sleep(3000);
+		saveProduct.click();
 	}
 
 }
