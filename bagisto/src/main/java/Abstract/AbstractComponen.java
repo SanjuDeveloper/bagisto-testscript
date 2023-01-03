@@ -79,11 +79,13 @@ public class AbstractComponen extends AbstractLocator{
 		actionClass.moveToElement(findBy).build().perform();
 	}
 	
+
 	public void doubleClick(WebElement findBy) {
 		Actions actionClass = new Actions(driver);
 		actionClass.doubleClick(findBy).build().perform();
 	}
 	
+
 	public Select selectDropdown(WebElement selectdropDown) {
 		Select selectDrop = new Select(selectdropDown);
 		return selectDrop;

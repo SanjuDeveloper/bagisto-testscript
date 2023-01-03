@@ -173,6 +173,7 @@ public class CreateProductPageObject extends AbstractComponen {
 		
 		inventorySection.click();
 		doubleClick(enterInventory);
+
 		enterInventory.sendKeys("100");
 		
 		System.out.println(imageSection.isDisplayed());

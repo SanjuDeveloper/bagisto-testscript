@@ -3,7 +3,6 @@ package shop.Tests;
 import java.io.IOException;
 import common.BaseTest;
 import shop.TestComponents.Retry;
-
 import org.testng.annotations.Test;
 
 public class LaunchShopTest extends BaseTest {

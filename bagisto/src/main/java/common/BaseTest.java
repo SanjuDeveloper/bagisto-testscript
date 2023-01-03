@@ -29,7 +29,6 @@ public class BaseTest {
 	public FileInputStream files;
 	
 	public WebDriver initlizeBrowser() throws IOException {
-		getGlobalProperty();	
 		getGlobalProperty();		
 		SHOP_URL = prop.getProperty("SHOP_URL");
 		ADMIN_URL =prop.getProperty("ADMIN_URL");

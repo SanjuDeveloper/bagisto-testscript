@@ -1,3 +1,3 @@
 ControlFocus("Open","","Edit1")
-ControlSetText("Open","","Edit1","C:\Users\DELL\Pictures\image-4.png")
+ControlSetText("Open","","Edit1","C:\Users\LENOVO\Downloads\download.jpg")
 ControlClick("Open","","Button1")
