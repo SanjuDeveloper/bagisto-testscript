@@ -36,7 +36,7 @@ public class BaseTest {
 		if (browserName.equalsIgnoreCase("chrome")) {		
 			driver = new ChromeDriver();			
 		} else if (browserName.equalsIgnoreCase("fireFox")) {			
-			System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");
+			//System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");
 			driver = new FirefoxDriver();
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			//TODO object of edge class;

@@ -1,7 +1,6 @@
 package shop.Tests;
 
 import org.testng.annotations.Test;
-
 import Abstract.AbstractComponen;
 import common.BaseTest;
 import helpers.ProductActionHelper;

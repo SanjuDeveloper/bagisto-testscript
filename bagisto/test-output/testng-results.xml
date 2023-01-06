@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-01-05T22:51:48 IST" name="Suite" finished-at="2023-01-05T22:52:09 IST" duration-ms="20791">
+    <groups>
+      <group name="LaunchShopTest.openBrowser">
+        <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@50d13246]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
+      </group> <!-- LaunchShopTest.openBrowser -->
+    </groups>
+    <test started-at="2023-01-05T22:51:48 IST" name="AddToCart" finished-at="2023-01-05T22:52:09 IST" duration-ms="20791">
+      <class name="shop.Tests.LaunchShopTest">
+        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@50d13246]" started-at="2023-01-05T22:51:48 IST" name="openBrowser" finished-at="2023-01-05T22:52:01 IST" duration-ms="13123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@50d13246]" started-at="2023-01-05T22:52:01 IST" name="closeBrowser" finished-at="2023-01-05T22:52:01 IST" duration-ms="35" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- shop.Tests.LaunchShopTest -->
+      <class name="shop.Tests.AddToCartTest">
+        <test-method signature="addToCart()[pri:0, instance:shop.Tests.AddToCartTest@335b5620]" started-at="2023-01-05T22:52:01 IST" name="addToCart" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2023-01-05T22:52:09 IST" duration-ms="7395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCart -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.AddToCartTest@335b5620]" started-at="2023-01-05T22:52:09 IST" name="closeBrowser" finished-at="2023-01-05T22:52:09 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- shop.Tests.AddToCartTest -->
+    </test> <!-- AddToCart -->
+  </suite> <!-- Suite -->
+</testng-results>

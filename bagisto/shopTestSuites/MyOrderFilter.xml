@@ -4,7 +4,7 @@
  <listeners>
       <listener class-name= "shop.TestComponents.Listeners"/>
   </listeners>
-   <test thread-count="5" name="MyOrderFilter">
+   <test thread-count="5" name="CustomerCheckout">
   	<classes>
 			<class name="shop.Tests.MyOrderSearchBoxFilterTest" />
 				<!--Humne isme LaunchShopTest esliye call kra hai kyoki MyOrderFilter LaunchShopTest pe depend hai-->
