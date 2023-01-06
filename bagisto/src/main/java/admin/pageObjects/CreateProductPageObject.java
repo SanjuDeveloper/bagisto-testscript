@@ -81,8 +81,9 @@ public class CreateProductPageObject extends AbstractComponen {
 	@FindBy(css="textarea[id=\"short_description\"]")
 	WebElement shortDescriptionTextArea;
 	
-	@FindBy(css="div[class$=\"have-wysiwyg\"]")
-	WebElement wysiwygEditor;
+	By EditorShortDescription = By.xpath("//label[@for='short_description']/parent::div[contains(@class,'have-wysiwyg')]");
+	
+	By EditorDescription = By.xpath("//label[@for='description']/parent::div[contains(@class,'have-wysiwyg')]");
 	
 	@FindBy(xpath="//body[@data-id='short_description']")
 	WebElement shortdescriptionFrame;
@@ -171,7 +172,8 @@ public class CreateProductPageObject extends AbstractComponen {
 		status.click();
 		
 		descriptionSection.click();
-		if(wysiwygEditor.isDisplayed()) {
+		boolean isShortEditorPresent = driver.findElements(EditorShortDescription).size()>0;
+		if(isShortEditorPresent) {
 		switchToFrame("short_description_ifr");
 		shortdescriptionFrame.sendKeys(shortDescription);
 		switchToDefaultContent();
@@ -179,7 +181,8 @@ public class CreateProductPageObject extends AbstractComponen {
 		else {
 		shortDescriptionTextArea.sendKeys(shortDescription);
 		}
-		if(wysiwygEditor.isDisplayed()) {
+		boolean isDescriptionEditorPresent = driver.findElements(EditorDescription).size()>0;
+		if(isDescriptionEditorPresent) {
 		switchToFrame("description_ifr");
 		descriptionFrame.sendKeys(description);
 		switchToDefaultContent();
@@ -195,7 +198,6 @@ public class CreateProductPageObject extends AbstractComponen {
 		
 		inventorySection.click();
 		doubleClick(enterInventory);
-
 		enterInventory.sendKeys("100");
 		
 		System.out.println(imageSection.isDisplayed());

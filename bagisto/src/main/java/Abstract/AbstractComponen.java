@@ -110,8 +110,8 @@ public class AbstractComponen extends AbstractLocator{
 		return  new SimpleDateFormat(formatType).format(requestFormat);
 	}
 	
-	public void switchToFrame(String id) {
-		driver.switchTo().frame(id);
+	public void switchToFrame(String frameId) {
+		driver.switchTo().frame(frameId);
 	}
 	
 	public void switchToFrame(int index) {
