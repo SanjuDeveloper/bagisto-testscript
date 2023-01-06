@@ -81,6 +81,15 @@ public class CreateProductPageObject extends AbstractComponen {
 	@FindBy(css="textarea[id=\"short_description\"]")
 	WebElement shortDescriptionTextArea;
 	
+	@FindBy(css="div[class$=\"have-wysiwyg\"]")
+	WebElement wysiwygEditor;
+	
+	@FindBy(xpath="//body[@data-id='short_description']")
+	WebElement shortdescriptionFrame;
+	
+	@FindBy(xpath="//body[@data-id=\"description\"]")
+	WebElement descriptionFrame;
+	
 	@FindBy(css="textarea[id=\"description\"]")
 	WebElement descriptionTextArea;
 	
@@ -162,9 +171,22 @@ public class CreateProductPageObject extends AbstractComponen {
 		status.click();
 		
 		descriptionSection.click();
+		if(wysiwygEditor.isDisplayed()) {
+		switchToFrame("short_description_ifr");
+		shortdescriptionFrame.sendKeys(shortDescription);
+		switchToDefaultContent();
+		}
+		else {
 		shortDescriptionTextArea.sendKeys(shortDescription);
+		}
+		if(wysiwygEditor.isDisplayed()) {
+		switchToFrame("description_ifr");
+		descriptionFrame.sendKeys(description);
+		switchToDefaultContent();
+		}
+		else {
 		descriptionTextArea.sendKeys(description);
-		
+		}
 		priceSection.click();
 		productPrice.sendKeys("30");
 		

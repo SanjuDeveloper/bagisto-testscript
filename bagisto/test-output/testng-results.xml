@@ -2,33 +2,33 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-05T22:51:48 IST" name="Suite" finished-at="2023-01-05T22:52:09 IST" duration-ms="20791">
+  <suite started-at="2023-01-06T23:16:44 IST" name="Default suite" finished-at="2023-01-06T23:17:58 IST" duration-ms="74078">
     <groups>
-      <group name="LaunchShopTest.openBrowser">
-        <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@50d13246]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
-      </group> <!-- LaunchShopTest.openBrowser -->
+      <group name="Login.adminLogin">
+        <method signature="Login.adminLogin()[pri:0, instance:admin.Tests.Login@543295b0]" name="adminLogin" class="admin.Tests.Login"/>
+      </group> <!-- Login.adminLogin -->
     </groups>
-    <test started-at="2023-01-05T22:51:48 IST" name="AddToCart" finished-at="2023-01-05T22:52:09 IST" duration-ms="20791">
-      <class name="shop.Tests.LaunchShopTest">
-        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@50d13246]" started-at="2023-01-05T22:51:48 IST" name="openBrowser" finished-at="2023-01-05T22:52:01 IST" duration-ms="13123" status="PASS">
+    <test started-at="2023-01-06T23:16:44 IST" name="Default test" finished-at="2023-01-06T23:17:58 IST" duration-ms="74078">
+      <class name="admin.Tests.CreateSimpleProduct">
+        <test-method signature="createProduct()[pri:0, instance:admin.Tests.CreateSimpleProduct@1ffaf86]" started-at="2023-01-06T23:17:04 IST" name="createProduct" depends-on-groups="Login.adminLogin" finished-at="2023-01-06T23:17:58 IST" duration-ms="54344" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@50d13246]" started-at="2023-01-05T22:52:01 IST" name="closeBrowser" finished-at="2023-01-05T22:52:01 IST" duration-ms="35" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- shop.Tests.LaunchShopTest -->
-      <class name="shop.Tests.AddToCartTest">
-        <test-method signature="addToCart()[pri:0, instance:shop.Tests.AddToCartTest@335b5620]" started-at="2023-01-05T22:52:01 IST" name="addToCart" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2023-01-05T22:52:09 IST" duration-ms="7395" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addToCart -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.AddToCartTest@335b5620]" started-at="2023-01-05T22:52:09 IST" name="closeBrowser" finished-at="2023-01-05T22:52:09 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- createProduct -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.CreateSimpleProduct@1ffaf86]" started-at="2023-01-06T23:17:58 IST" name="closeBrowser" finished-at="2023-01-06T23:17:58 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- shop.Tests.AddToCartTest -->
-    </test> <!-- AddToCart -->
-  </suite> <!-- Suite -->
+      </class> <!-- admin.Tests.CreateSimpleProduct -->
+      <class name="admin.Tests.Login">
+        <test-method signature="adminLogin()[pri:0, instance:admin.Tests.Login@543295b0]" started-at="2023-01-06T23:16:44 IST" name="adminLogin" finished-at="2023-01-06T23:17:04 IST" duration-ms="19592" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminLogin -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.Login@543295b0]" started-at="2023-01-06T23:17:04 IST" name="closeBrowser" finished-at="2023-01-06T23:17:04 IST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- admin.Tests.Login -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

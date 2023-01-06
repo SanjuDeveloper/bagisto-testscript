@@ -110,6 +110,22 @@ public class AbstractComponen extends AbstractLocator{
 		return  new SimpleDateFormat(formatType).format(requestFormat);
 	}
 	
+	public void switchToFrame(String id) {
+		driver.switchTo().frame(id);
+	}
+	
+	public void switchToFrame(int index) {
+		driver.switchTo().frame(index);
+	}
+	
+	public void switchToFrame(WebElement FindBy) {
+		driver.switchTo().frame(FindBy);
+	}
+	
+	public void switchToDefaultContent() {
+		driver.switchTo().defaultContent();
+	}
+	
 	public void handleCalendarDate(String date,String currentMonth) throws InterruptedException {
 		 Select monthSelect = selectDropdown(selectMonth);
 		 WebElement month = monthSelect.getFirstSelectedOption();
