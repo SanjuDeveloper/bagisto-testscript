@@ -25,9 +25,9 @@ public class LoginPageObject extends AbstractComponen {
 	@FindBy(css="button[class*='btn-primary']")
 	WebElement loginButton;
 	
-	public void Login() {
-		email.sendKeys("admin@example.com");
-		password.sendKeys("admin123");
+	public void Login(String AdminEmail, String Password) {
+		email.sendKeys(AdminEmail);
+		password.sendKeys(Password);
 		loginButton.click();
 	}
 }

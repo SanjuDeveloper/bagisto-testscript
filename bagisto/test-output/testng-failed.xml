@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="shop.Tests.AddToWishListTest">
+      <class name="admin.Tests.CreateSimpleProduct">
         <methods>
-          <include name="addToWishlist"/>
+          <include name="closeBrowser"/>
+          <include name="createProduct"/>
         </methods>
-      </class> <!-- shop.Tests.AddToWishListTest -->
+      </class> <!-- admin.Tests.CreateSimpleProduct -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

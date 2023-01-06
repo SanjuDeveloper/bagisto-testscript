@@ -1,50 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-11T15:38:03 IST" name="Default suite" finished-at="2022-12-11T15:38:26 IST" duration-ms="22830">
+  <suite started-at="2023-01-07T00:14:11 IST" name="Default suite" finished-at="2023-01-07T00:15:33 IST" duration-ms="82244">
     <groups>
-      <group name="LaunchShopTest.openBrowser">
-        <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
-      </group> <!-- LaunchShopTest.openBrowser -->
-      <group name="CustomerLoginTest.customerLogin">
-        <method signature="CustomerLoginTest.customerLogin(java.util.HashMap)[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" name="customerLogin" class="shop.Tests.CustomerLoginTest"/>
-      </group> <!-- CustomerLoginTest.customerLogin -->
+      <group name="Login.adminLogin">
+        <method signature="Login.adminLogin()[pri:0, instance:admin.Tests.Login@543295b0]" name="adminLogin" class="admin.Tests.Login"/>
+      </group> <!-- Login.adminLogin -->
     </groups>
-    <test started-at="2022-12-11T15:38:03 IST" name="Default test" finished-at="2022-12-11T15:38:26 IST" duration-ms="22830">
-      <class name="shop.Tests.CustomerLoginTest">
-        <test-method signature="customerLogin(java.util.HashMap)[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" started-at="2022-12-11T15:38:11 IST" name="customerLogin" data-provider="getUserandPass" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2022-12-11T15:38:18 IST" duration-ms="6681" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=Admin123, email=admin@example.com}]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2023-01-07T00:14:11 IST" name="Default test" finished-at="2023-01-07T00:15:33 IST" duration-ms="82244">
+      <class name="admin.Tests.CreateSimpleProduct">
+        <test-method signature="createProduct()[pri:0, instance:admin.Tests.CreateSimpleProduct@1ffaf86]" started-at="2023-01-07T00:14:31 IST" name="createProduct" depends-on-groups="Login.adminLogin" finished-at="2023-01-07T00:15:33 IST" duration-ms="62104" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- customerLogin -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.CustomerLoginTest@8f2ef19]" started-at="2022-12-11T15:38:18 IST" name="closeBrowser" finished-at="2022-12-11T15:38:18 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- createProduct -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.CreateSimpleProduct@1ffaf86]" started-at="2023-01-07T00:15:33 IST" name="closeBrowser" finished-at="2023-01-07T00:15:33 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- shop.Tests.CustomerLoginTest -->
-      <class name="shop.Tests.AddToWishListTest">
-        <test-method signature="addToWishlist()[pri:0, instance:shop.Tests.AddToWishListTest@72cc7e6f]" started-at="2022-12-11T15:38:18 IST" name="addToWishlist" depends-on-groups="LaunchShopTest.openBrowser, CustomerLoginTest.customerLogin" finished-at="2022-12-11T15:38:26 IST" duration-ms="8092" status="PASS">
+      </class> <!-- admin.Tests.CreateSimpleProduct -->
+      <class name="admin.Tests.Login">
+        <test-method signature="adminLogin()[pri:0, instance:admin.Tests.Login@543295b0]" started-at="2023-01-07T00:14:11 IST" name="adminLogin" finished-at="2023-01-07T00:14:31 IST" duration-ms="19975" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addToWishlist -->
-      </class> <!-- shop.Tests.AddToWishListTest -->
-      <class name="shop.Tests.LaunchShopTest">
-        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" started-at="2022-12-11T15:38:03 IST" name="openBrowser" finished-at="2022-12-11T15:38:10 IST" duration-ms="7034" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@5afa3c9]" started-at="2022-12-11T15:38:10 IST" name="closeBrowser" finished-at="2022-12-11T15:38:10 IST" duration-ms="18" status="PASS">
+        </test-method> <!-- adminLogin -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.Login@543295b0]" started-at="2023-01-07T00:14:31 IST" name="closeBrowser" finished-at="2023-01-07T00:14:31 IST" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- shop.Tests.LaunchShopTest -->
+      </class> <!-- admin.Tests.Login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

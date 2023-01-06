@@ -2,8 +2,8 @@ package admin.Tests;
 
 import java.io.IOException;
 import org.testng.annotations.Test;
-import BaseTest.BaseTest;
 import admin.pageObjects.*;
+import common.BaseTest;
 
 public class CreateSimpleProduct extends BaseTest {
 	
@@ -14,7 +14,11 @@ public class CreateSimpleProduct extends BaseTest {
 	@Test(dependsOnGroups={"Login.adminLogin"})	
 	public void createProduct() throws InterruptedException, IOException {
 		CreateProductPageObject createProductObject = new CreateProductPageObject(driver);		
-		createProductObject.createSimpleProduct();
-		createProductObject.createdOrEditProduct();
+		getGlobalProperty();
+		String ProductSKU = prop.getProperty("PRODUCT_SKU");
+		String description = prop.getProperty("PRODUCT_DESCRIPTION");
+		String shortDescription = prop.getProperty("PRODUCT_SHORTDESCRIPTION");
+		createProductObject.createSimpleProduct(ProductSKU);
+		createProductObject.createdOrEditProduct(shortDescription , description);
 	}
 }

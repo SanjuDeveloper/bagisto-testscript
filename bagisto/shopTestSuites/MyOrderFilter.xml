@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+ <listeners>
+      <listener class-name= "shop.TestComponents.Listeners"/>
+  </listeners>
+   <test thread-count="5" name="CustomerCheckout">
+  	<classes>
+			<class name="shop.Tests.MyOrderSearchBoxFilterTest" />
+				<!--Humne isme LaunchShopTest esliye call kra hai kyoki MyOrderFilter LaunchShopTest pe depend hai-->
+			<class name="shop.Tests.LaunchShopTest" />
+			<!--Humne isme CustomerLoginTest esliye call kra hai kyoki MyOrderFilter LaunchShopTest pe depend hai-->
+			<class name="shop.Tests.CustomerLoginTest"/>
+	</classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

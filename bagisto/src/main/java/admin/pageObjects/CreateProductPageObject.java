@@ -19,7 +19,7 @@ public class CreateProductPageObject extends AbstractComponen {
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//span[@class='icon catalog-icon']")
+	@FindBy(css="li a span[class*=\"catalog-icon\"]")
 	WebElement catalogIcon;
 	
 	@FindBy(linkText ="Add Product")
@@ -45,46 +45,87 @@ public class CreateProductPageObject extends AbstractComponen {
 	WebElement productName;
 		
 	@FindBy(css="label[for='new']")
+	WebElement NEWLABEL;
+	
+	@FindBy(xpath="//label[@for=\"new\"]/following-sibling::label")
 	WebElement NEW;
 	
 	@FindBy(xpath="//label[@for='featured']")
+	WebElement featuredLabel;
+	
+	@FindBy(xpath="//label[@for=\"featured\"]/following-sibling::label")
 	WebElement featured;
+	//label[@for="featured"]/following-sibling::label
 	
 	@FindBy(css="label[for='visible_individually']")
+	WebElement visibleIndividuallyLabel;
+	
+	@FindBy(xpath="//label[@for=\"visible_individually\"]/following-sibling::label")
 	WebElement visibleIndividually;
 	
 	@FindBy(xpath="//label[@for='guest_checkout']")
+	WebElement guestCheckoutLabel;
+	
+	@FindBy(xpath="//label[@for=\"guest_checkout\"]/following-sibling::label")
 	WebElement guestCheckout;
 	
 	@FindBy(xpath="//label[@for='status']")
+	WebElement statusLabel;
+	
+	@FindBy(xpath="//label[@for=\"status\"]/following-sibling::label")
 	WebElement status;
 	
 	@FindBy(xpath="//div[@class='page-content']/div[2]/div[1]")
 	WebElement descriptionSection;
 	
-	@FindBy(xpath="//div[@class='page-content']/div[4]/div[1]")
+	@FindBy(css="textarea[id=\"short_description\"]")
+	WebElement shortDescriptionTextArea;
+	
+	By EditorShortDescription = By.xpath("//label[@for='short_description']/parent::div[contains(@class,'have-wysiwyg')]");
+	
+	By EditorDescription = By.xpath("//label[@for='description']/parent::div[contains(@class,'have-wysiwyg')]");
+	
+	@FindBy(xpath="//body[@data-id='short_description']")
+	WebElement shortdescriptionFrame;
+	
+	@FindBy(xpath="//body[@data-id=\"description\"]")
+	WebElement descriptionFrame;
+	
+	@FindBy(css="textarea[id=\"description\"]")
+	WebElement descriptionTextArea;
+	
+	@FindBy(xpath="//div[@class='page-content']/div[4]")
 	WebElement priceSection;
 	
-	@FindBy(xpath="//div[@class='page-content']/div[5]/div[1]")
+	@FindBy(css="input[id=price]")
+    WebElement productPrice;
+	
+	@FindBy(xpath="//div[@class='page-content']/div[5]")
 	WebElement shippngSection;
 	
-	@FindBy(xpath="//div[@class='page-content']/div[6]/div[1]")
+	@FindBy(css="input[id=weight]")
+	WebElement weight;
+	
+	@FindBy(xpath="//div[@class='page-content']/div[6]")
 	WebElement inventorySection;
 	
-	@FindBy(xpath="//div[@class='page-content']/div[7]/div[1]")
+	@FindBy(css="input[name=\"inventories[1]\"]")
+	WebElement enterInventory;
+	
+	@FindBy(xpath="//div[@class='page-content']/div[7]")
 	WebElement imageSection;
 	
-	@FindBy(xpath="//*[@id=\"app\"]/div[4]/div/div[2]/div[2]/form/div[2]/div[7]/div[2]/div/div/div/label")
+	@FindBy(xpath="//label[contains(text(),'Add Image')]")
 	WebElement AddImage;
 	
-	@FindBy(css="label[class='image-item']")
+	@FindBy(css="label[class*=\"draggable\"]")
 	WebElement selectImage;
 	
 	By addButton = By.linkText("Add Product");
 	By selectType = By.id("type");
 	By productNameInputBox = By.cssSelector("input[id='name']");
 
-	public void createSimpleProduct() throws InterruptedException {
+	public void createSimpleProduct(String productsku) throws InterruptedException, IOException {
 		// Thread.sleep(5000); // wait for element load
 		 waitForWebElementToAppear(catalogIcon);
 		 catalogIcon.click();
@@ -97,42 +138,67 @@ public class CreateProductPageObject extends AbstractComponen {
 		 attributeFamily.click();
 		 Select Family = new Select(attributeFamily);
 		 Family.selectByVisibleText("Default"); // Select Attribute Family
-		 productSKU.sendKeys("mens-tshirt");
+		 productSKU.sendKeys(productsku);
 		 saveProduct.click();		
 		 if(successMessage.isDisplayed()) {
 			 //Take Screenshot
+			 getScreenshot(productsku, driver);
 		 }
 	}
 	
-	public void createdOrEditProduct() throws InterruptedException, IOException {
+	public void createdOrEditProduct(String description, String shortDescription) throws InterruptedException, IOException {
 	
 		waitForElementToAppear(productNameInputBox); //explicitly wait
-		productName.sendKeys("t-shirt");		
-		scrollDown(driver,460);	
+		productName.sendKeys("t-shirt");			
 		
 		System.out.println(NEW.isDisplayed());
-		waitForWebElementToAppear(NEW);
+		waitForWebElementToAppear(NEWLABEL);
 		NEW.click();
 		
-		System.out.println(NEW.isDisplayed());
-		waitForWebElementToAppear(featured);
+		System.out.println(featuredLabel.isDisplayed());
+		waitForWebElementToAppear(featuredLabel);
 		featured.click();
 		
-		System.out.println(visibleIndividually.isDisplayed());
-		waitForWebElementToAppear(visibleIndividually);
+		System.out.println(visibleIndividuallyLabel.isDisplayed());
+		waitForWebElementToAppear(visibleIndividuallyLabel);
 		visibleIndividually.click();
 		
-		System.out.println(guestCheckout.isDisplayed());
-		waitForWebElementToAppear(guestCheckout);
+		System.out.println(guestCheckoutLabel.isDisplayed());
+		waitForWebElementToAppear(guestCheckoutLabel);
 		guestCheckout.click();
 		
-		scrollDown(driver,360);
-		
-		System.out.println(status.isDisplayed());
-		waitForWebElementToAppear(status);
+		System.out.println(statusLabel.isDisplayed());
+		waitForWebElementToAppear(statusLabel);
 		status.click();
 		
-		scrollDown(driver,800);
+		descriptionSection.click();
+		boolean isShortEditorPresent = driver.findElements(EditorShortDescription).size()>0;
+		if(isShortEditorPresent) {
+		switchToFrame("short_description_ifr");
+		shortdescriptionFrame.sendKeys(shortDescription);
+		switchToDefaultContent();
+		}
+		else {
+		shortDescriptionTextArea.sendKeys(shortDescription);
+		}
+		boolean isDescriptionEditorPresent = driver.findElements(EditorDescription).size()>0;
+		if(isDescriptionEditorPresent) {
+		switchToFrame("description_ifr");
+		descriptionFrame.sendKeys(description);
+		switchToDefaultContent();
+		}
+		else {
+		descriptionTextArea.sendKeys(description);
+		}
+		priceSection.click();
+		productPrice.sendKeys("30");
+		
+		shippngSection.click();
+		weight.sendKeys("2");
+		
+		inventorySection.click();
+		doubleClick(enterInventory);
+		enterInventory.sendKeys("100");
 		
 		System.out.println(imageSection.isDisplayed());
 		waitForWebElementToAppear(imageSection);
@@ -146,9 +212,9 @@ public class CreateProductPageObject extends AbstractComponen {
 		System.out.println(selectImage.isDisplayed());
 		selectImage.click();
 		Thread.sleep(1000);
-		Runtime.getRuntime().exec("D:\\bagisto-testscript\\Fileupload.exe");
+		Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\Fileupload.exe");
+		Thread.sleep(3000);
+		saveProduct.click();
 	}
 
 }
-
-

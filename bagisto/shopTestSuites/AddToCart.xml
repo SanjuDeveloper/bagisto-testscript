@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+  <listeners>
+      <listener class-name= "shop.TestComponents.Listeners"/>
+  </listeners>
    <test thread-count="5" name="AddToCart">
   	<classes>
-			<class name="shop.Tests.AddToCartTest" />
-			<!--Humne isme LaunchShopTest esliye call kra hai kyoki AddToCartTest LaunchShopTest pe depend hai-->
+  		<!--Humne isme LaunchShopTest esliye call kra hai kyoki AddToCartTest LaunchShopTest pe depend hai-->
 			<class name="shop.Tests.LaunchShopTest" />
+			<class name="shop.Tests.AddToCartTest" />
 	</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

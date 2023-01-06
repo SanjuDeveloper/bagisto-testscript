@@ -1,4 +1,4 @@
-package BaseTest;
+package common;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,7 +19,6 @@ import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import admin.pageObjects.LoginPageObject;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	
@@ -30,15 +29,14 @@ public class BaseTest {
 	public FileInputStream files;
 	
 	public WebDriver initlizeBrowser() throws IOException {
-		getGlobalProperty();	
+		getGlobalProperty();		
 		SHOP_URL = prop.getProperty("SHOP_URL");
 		ADMIN_URL =prop.getProperty("ADMIN_URL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");			
 		if (browserName.equalsIgnoreCase("chrome")) {		
-			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();			
 		} else if (browserName.equalsIgnoreCase("fireFox")) {			
-			System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");
+			//System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");
 			driver = new FirefoxDriver();
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			//TODO object of edge class;
