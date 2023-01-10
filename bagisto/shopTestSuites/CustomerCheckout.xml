@@ -4,12 +4,12 @@
  <listeners>
       <listener class-name= "shop.TestComponents.Listeners"/>
   </listeners>
-   <test thread-count="5" name="AddToWishList">
+   <test thread-count="5" name="MyOrderFilter">
   	<classes>
-			<class name="shop.Tests.AddToWishListTest" />
-				<!--Humne isme LaunchShopTest esliye call kra hai kyoki AddToCartTest LaunchShopTest pe depend hai-->
+			<class name="shop.Tests.CustomerCheckoutTest" />
+				<!--Humne isme LaunchShopTest esliye call kra hai kyoki MyOrderFilter LaunchShopTest pe depend hai-->
 			<class name="shop.Tests.LaunchShopTest" />
-			<!--Humne isme CustomerLoginTest esliye call kra hai kyoki AddToCartTest LaunchShopTest pe depend hai-->
+			<!--Humne isme CustomerLoginTest esliye call kra hai kyoki MyOrderFilter LaunchShopTest pe depend hai-->
 			<class name="shop.Tests.CustomerLoginTest"/>
 	</classes>
   </test> <!-- Test -->
