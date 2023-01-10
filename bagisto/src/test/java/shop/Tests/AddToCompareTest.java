@@ -13,7 +13,5 @@ public class AddToCompareTest extends BaseTest {
 		String success_message = helper.addProductTo("Compare",1);	
 		System.out.println(success_message);
 		Assert.assertEquals(success_message, "Success! Item successfully added to compare list.");
-
-
 	}
 }

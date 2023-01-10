@@ -24,7 +24,7 @@ public class AbstractComponen extends AbstractLocator{
 	WebDriver driver;	
 	public AbstractComponen(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		//PageFactory.initElements(driver, this);
 	}
 	
 	public  void waitForElementToAppear(By findBy) {
