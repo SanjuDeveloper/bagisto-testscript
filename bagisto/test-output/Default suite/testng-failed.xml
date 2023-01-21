@@ -5,7 +5,6 @@
     <classes>
       <class name="shop.Tests.FlipkartProduct">
         <methods>
-          <include name="closeBrowser"/>
           <include name="flipKart"/>
         </methods>
       </class> <!-- shop.Tests.FlipkartProduct -->

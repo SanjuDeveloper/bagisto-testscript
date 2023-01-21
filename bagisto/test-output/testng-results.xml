@@ -2,19 +2,15 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-21T16:32:53 IST" name="Default suite" finished-at="2023-01-21T16:33:17 IST" duration-ms="24527">
+  <suite started-at="2023-01-21T17:43:11 IST" name="Default suite" finished-at="2023-01-21T17:43:30 IST" duration-ms="19288">
     <groups>
     </groups>
-    <test started-at="2023-01-21T16:32:53 IST" name="Default test" finished-at="2023-01-21T16:33:17 IST" duration-ms="24527">
+    <test started-at="2023-01-21T17:43:11 IST" name="Default test" finished-at="2023-01-21T17:43:30 IST" duration-ms="19288">
       <class name="shop.Tests.FlipkartProduct">
-        <test-method signature="flipKart()[pri:0, instance:shop.Tests.FlipkartProduct@1c7696c6]" started-at="2023-01-21T16:32:53 IST" name="flipKart" finished-at="2023-01-21T16:33:17 IST" duration-ms="24333" status="PASS">
+        <test-method signature="flipKart()[pri:0, instance:shop.Tests.FlipkartProduct@2e3967ea]" started-at="2023-01-21T17:43:11 IST" name="flipKart" finished-at="2023-01-21T17:43:30 IST" duration-ms="19176" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flipKart -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.FlipkartProduct@1c7696c6]" started-at="2023-01-21T16:33:17 IST" name="closeBrowser" finished-at="2023-01-21T16:33:17 IST" duration-ms="15" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
       </class> <!-- shop.Tests.FlipkartProduct -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
