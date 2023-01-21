@@ -1,34 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-10T22:35:22 IST" name="Default suite" finished-at="2023-01-10T22:35:51 IST" duration-ms="29279">
+  <suite started-at="2023-01-21T16:32:53 IST" name="Default suite" finished-at="2023-01-21T16:33:17 IST" duration-ms="24527">
     <groups>
-      <group name="LaunchShopTest.openBrowser">
-        <method signature="LaunchShopTest.openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@1ffaf86]" name="openBrowser" class="shop.Tests.LaunchShopTest"/>
-      </group> <!-- LaunchShopTest.openBrowser -->
     </groups>
-    <test started-at="2023-01-10T22:35:22 IST" name="Default test" finished-at="2023-01-10T22:35:51 IST" duration-ms="29279">
-      <class name="shop.Tests.LaunchShopTest">
-        <test-method signature="openBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@1ffaf86]" started-at="2023-01-10T22:35:22 IST" name="openBrowser" finished-at="2023-01-10T22:35:50 IST" duration-ms="27696" status="PASS">
+    <test started-at="2023-01-21T16:32:53 IST" name="Default test" finished-at="2023-01-21T16:33:17 IST" duration-ms="24527">
+      <class name="shop.Tests.FlipkartProduct">
+        <test-method signature="flipKart()[pri:0, instance:shop.Tests.FlipkartProduct@1c7696c6]" started-at="2023-01-21T16:32:53 IST" name="flipKart" finished-at="2023-01-21T16:33:17 IST" duration-ms="24333" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.LaunchShopTest@1ffaf86]" started-at="2023-01-10T22:35:50 IST" name="closeBrowser" finished-at="2023-01-10T22:35:50 IST" duration-ms="28" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- shop.Tests.LaunchShopTest -->
-      <class name="shop.Tests.AddToCompareTest">
-        <test-method signature="addToCompare()[pri:0, instance:shop.Tests.AddToCompareTest@54422e18]" started-at="2023-01-10T22:35:50 IST" name="addToCompare" depends-on-groups="LaunchShopTest.openBrowser" finished-at="2023-01-10T22:35:51 IST" duration-ms="1345" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addToCompare -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.AddToCompareTest@54422e18]" started-at="2023-01-10T22:35:51 IST" name="closeBrowser" finished-at="2023-01-10T22:35:51 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- flipKart -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:shop.Tests.FlipkartProduct@1c7696c6]" started-at="2023-01-21T16:33:17 IST" name="closeBrowser" finished-at="2023-01-21T16:33:17 IST" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- shop.Tests.AddToCompareTest -->
+      </class> <!-- shop.Tests.FlipkartProduct -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
