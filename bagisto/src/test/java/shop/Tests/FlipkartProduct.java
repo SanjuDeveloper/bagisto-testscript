@@ -27,7 +27,7 @@ public class FlipkartProduct  {
 			int price = Integer.parseInt(productPrice.get(i).getText().replaceAll("[^a-zA-Z0-9.]", ""));
 			ss.add(price);
 		}
-		int smallestPrice = Collections.min(ss);
+		int smallestPrice = Collections.min(ss); 
 		for (int i = 0; i < allProducts.size(); i++) {
 			if(smallestPrice == Integer.parseInt(productPrice.get(i).getText().replaceAll("[^a-zA-Z0-9.]", ""))){
 				System.out.println(productName.get(i).getText());

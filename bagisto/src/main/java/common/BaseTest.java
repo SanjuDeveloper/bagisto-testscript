@@ -2,7 +2,6 @@ package common;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
@@ -11,10 +10,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -113,37 +108,9 @@ public class BaseTest {
 
 	public void getGlobalProperty() throws IOException {
 		prop = new Properties();
-		files = new FileInputStream(
-				System.getProperty("user.dir") + "\\src\\main\\java\\resources\\GlobalData.properties");
+		files = new FileInputStream();
 		prop.load(files);
 	}
-
-	public void getExceldata(String sheetname , String entity) throws IOException {
-		String entityResult = null;
-		// Excel Sheet file path
-		FileInputStream files = new FileInputStream(
-				System.getProperty("user.dir") + "\\src\\main\\java\\resources\\TestDataExcel.xlsx");
-		// create object and pass file path into the object
-		XSSFWorkbook workbook = new XSSFWorkbook(files);
-		// getting number of sheets available in the excel file
-		int numbeOfSheet = workbook.getNumberOfSheets();
-		// Iterate through sheet and compare sheet name and get into the sheet
-		for (int i = 0; i < numbeOfSheet; i++) {
-			if (workbook.getSheetName(i).equalsIgnoreCase(sheetname))
-				;
-			{		
-				XSSFSheet sheet = workbook.getSheetAt(i);
-				// Iterator iterate through all the rows.
-				System.out.println( sheet.getLastRowNum());
-			int rowCount = 	sheet.getLastRowNum()-sheet.getFirstRowNum();
-
-			  for(int j = 0;j<=rowCount;j++) {
-				 int cellCount=  sheet.getRow(j).getLastCellNum();
-				 for(int k = 0;k<cellCount;k++) {
-					 System.out.println(sheet.getRow(k).getCell(j).getStringCellValue());
-				 }
-			  }
-}
-		}
-	}
+	//files = new FileInputStream(
+	//System.getProperty("user.dir") + "\\src\\main\\java\\resources\\GlobalData.properties");
 }
