@@ -24,7 +24,7 @@ public class AbstractComponen extends AbstractLocator{
 	WebDriver driver;	
 	public AbstractComponen(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		//PageFactory.initElements(driver, this);
 	}
 	
 	public  void waitForElementToAppear(By findBy) {
@@ -79,11 +79,13 @@ public class AbstractComponen extends AbstractLocator{
 		actionClass.moveToElement(findBy).build().perform();
 	}
 	
+
 	public void doubleClick(WebElement findBy) {
 		Actions actionClass = new Actions(driver);
 		actionClass.doubleClick(findBy).build().perform();
 	}
 	
+
 	public Select selectDropdown(WebElement selectdropDown) {
 		Select selectDrop = new Select(selectdropDown);
 		return selectDrop;
@@ -106,6 +108,22 @@ public class AbstractComponen extends AbstractLocator{
 		Calendar calendar = Calendar.getInstance();  // get a calendar instance, which defaults to "now"	   	
 		Date requestFormat = calendar.getTime();		 	
 		return  new SimpleDateFormat(formatType).format(requestFormat);
+	}
+	
+	public void switchToFrame(String frameId) {
+		driver.switchTo().frame(frameId);
+	}
+	
+	public void switchToFrame(int index) {
+		driver.switchTo().frame(index);
+	}
+	
+	public void switchToFrame(WebElement FindBy) {
+		driver.switchTo().frame(FindBy);
+	}
+	
+	public void switchToDefaultContent() {
+		driver.switchTo().defaultContent();
 	}
 	
 	public void handleCalendarDate(String date,String currentMonth) throws InterruptedException {

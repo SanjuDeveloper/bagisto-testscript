@@ -3,7 +3,7 @@ package shop.Tests;
 import java.io.IOException;
 import org.junit.Assert;
 import org.testng.annotations.Test;
-import BaseTest.BaseTest;
+import common.BaseTest;
 import helpers.SearchProductHelper;
 import shop.pageobjects.MyOrderSearchBoxFilterPageObject;
 
@@ -14,7 +14,7 @@ public class MyOrderSearchBoxFilterTest extends BaseTest {
 	public void MyOrderSearchBox() throws IOException {
 		getGlobalProperty();
 		String toSearch = prop.getProperty("searchInOrderFilter");
-		SearchProductHelper searchterm = new SearchProductHelper(BaseTest.driver);
+		SearchProductHelper searchterm = new SearchProductHelper(driver);
 		MyOrderSearchBoxFilterPageObject search = new MyOrderSearchBoxFilterPageObject(BaseTest.driver);
 		int[] filterResult = search.searchBoxFilter(toSearch, searchterm);	
 		System.out.println("Search Term = "+toSearch);

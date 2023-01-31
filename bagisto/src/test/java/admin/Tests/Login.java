@@ -1,19 +1,18 @@
 package admin.Tests;
 
 import java.io.IOException;
-
 import org.testng.annotations.Test;
-import BaseTest.BaseTest;
+import common.BaseTest;
 import admin.pageObjects.LoginPageObject;
 
 public class Login extends BaseTest {
-	
-	@Test(groups={"Login.adminLogin"})
+
+	@Test(groups = { "Login.adminLogin" })
 	public void adminLogin() throws IOException {
 		getGlobalProperty();
 		String email = prop.getProperty("AdminEmail");
 		String password = prop.getProperty("AdminPassWord");
 		LoginPageObject LoginPageObject = launcDashboard();
-		LoginPageObject.Login(email,password);
+		LoginPageObject.Login(email, password);
 	}
 }

@@ -122,9 +122,9 @@ public class verifyShoppingCartProduct extends AbstractComponen {
     /* Click Place Order Button after that select shipping address
      * shipping method, Payment Method and print order id and thankyou message*/
     public void completeCheckoutProcess() throws InterruptedException {
-    	  boolean isShippable = driver.findElements(shippingMethod).size()>0;
     	  checkoutButton.click();
     	  shipAddressRadio.click();
+    	  boolean isShippable = driver.findElements(shippingMethod).size()>0;
     	  if(isShippable) {
     	  shippingMethodRadio.click();
     	  }
