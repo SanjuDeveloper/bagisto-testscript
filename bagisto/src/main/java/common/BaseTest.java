@@ -108,9 +108,9 @@ public class BaseTest {
 
 	public void getGlobalProperty() throws IOException {
 		prop = new Properties();
-		files = new FileInputStream();
+		files = new FileInputStream(
+		System.getProperty("user.dir") + "\\src\\main\\java\\resources\\GlobalData.properties");
 		prop.load(files);
 	}
-	//files = new FileInputStream(
-	//System.getProperty("user.dir") + "\\src\\main\\java\\resources\\GlobalData.properties");
+	
 }
